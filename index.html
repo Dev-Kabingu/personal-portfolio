@@ -636,15 +636,91 @@
                   <span class="mini-tag">Mobile Design</span>
                 </div>
 
-                <a href="#"
-                  class="case-btn">
-                  Read Case Study →
-                </a>
+               <a href="./case-studies/nexa.html"
+  class="premium-case-btn">
+  Read Full Case Study
+
+  <span>→</span>
+</a>
 
               </div>
             </div>
           </div>
         </div>
+        
+        <!-- Case Study  -->
+
+<!-- CASE STUDY -->
+<div class="case-study-card case-item" data-aos="fade-up">
+
+  <div
+    class="bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700">
+
+    <div class="grid md:grid-cols-2 gap-0">
+
+      <!-- IMAGE -->
+      <div class="overflow-hidden">
+
+        <img src="/images/NDO.png"
+          class="w-full h-full object-cover hover:scale-105 transition duration-700">
+
+      </div>
+
+      <!-- CONTENT -->
+      <div class="p-10 flex flex-col justify-center">
+
+        <span class="tag mb-4">
+          Community Platform Redesign
+        </span>
+
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-5">
+
+          Nairobi DevOps Community
+
+        </h2>
+
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+
+          Complete UX/UI redesign focused on improving navigation,
+          strengthening community branding,
+          and creating a more modern and engaging digital experience
+          for the DevOps community.
+
+        </p>
+
+        <div class="flex flex-wrap gap-3 mb-8">
+
+          <span class="mini-tag">
+            UX Redesign
+          </span>
+
+          <span class="mini-tag">
+            Community Platform
+          </span>
+
+          <span class="mini-tag">
+            Web Experience
+          </span>
+
+        </div>
+
+        <a href="./case-studies/ndc.html"
+          class="premium-case-btn">
+
+          Read Full Case Study
+
+          <span>→</span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+        
 
         <!-- CASE STUDY -->
         <div class="case-study-card case-item" data-aos="fade-up">
@@ -731,7 +807,7 @@
     @apply text-gray-600 dark:text-gray-300 leading-relaxed;
   }
 
-  .card-link{
+  /* .card-link{
     @apply inline-block mt-6 text-orange-500 font-semibold hover:translate-x-1 transition-all;
   }
 
@@ -741,8 +817,59 @@
 
   .show-btn{
     @apply bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-gray-700 hover:border-orange-500 text-gray-900 dark:text-white px-8 py-4 rounded-full shadow-lg hover:shadow-orange-500/20 transition-all duration-300 font-semibold;
-  }
+  } */
 
+  /* ================= PREMIUM PROJECT LINK ================= */
+
+.premium-link{
+  @apply mt-7 inline-flex items-center gap-3 text-orange-500 font-semibold transition-all duration-300;
+}
+
+.premium-link span{
+  @apply transition-transform duration-300;
+}
+
+.premium-link:hover span{
+  transform: translateX(6px);
+}
+
+/* ================= PREMIUM CASE STUDY BUTTON ================= */
+
+.premium-case-btn{
+  @apply relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-orange-500 px-7 py-4 font-semibold text-white shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-orange-500/30;
+}
+
+.premium-case-btn span{
+  @apply transition-transform duration-300;
+}
+
+.premium-case-btn:hover span{
+  transform: translateX(5px);
+}
+
+/* ================= SHOW MORE BUTTON ================= */
+
+.show-btn{
+  @apply relative overflow-hidden rounded-full border border-orange-500 bg-orange-500 px-8 py-4 font-semibold text-white shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-orange-500/30;
+}
+
+.show-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to right,#fb923c,#f97316);
+  transform:translateY(100%);
+  transition:0.5s;
+}
+
+.show-btn:hover::before{
+  transform:translateY(0%);
+}
+
+.show-btn span{
+  position:relative;
+  z-index:2;
+}
   .hidden-card,
   .hidden-case{
     display:none;

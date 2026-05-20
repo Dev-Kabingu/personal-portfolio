@@ -537,8 +537,6 @@
     });
   </script>
 
-
-
 <!-- Portfolio & Case Study Section -->
 <section id="portfolio" class="py-24 bg-gray-50 dark:bg-[#0f172a] overflow-hidden">
   <div class="container mx-auto px-5">
@@ -823,48 +821,48 @@
   </div>
 </section>
 
-<!-- STYLES -->
+<!-- STYLES (Strictly Scoped to #portfolio to prevent styles leaking to the About section) -->
 <style>
-  .active-toggle {
+  #portfolio .active-toggle {
     background: linear-gradient(to right, #f97316, #fb923c);
     color: white;
     box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
   }
 
-  .portfolio-card {
+  #portfolio .portfolio-card {
     @apply bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-700 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl;
   }
 
-  .image-wrapper {
+  #portfolio .image-wrapper {
     @apply overflow-hidden;
   }
 
-  .image-wrapper img {
+  #portfolio .image-wrapper img {
     @apply w-full h-64 object-cover transition duration-700 hover:scale-110;
   }
 
-  .tag {
+  #portfolio .tag {
     @apply inline-block text-sm bg-orange-100 dark:bg-orange-500/20 text-orange-500 px-4 py-1 rounded-full font-medium mb-4;
   }
 
-  .mini-tag {
+  #portfolio .mini-tag {
     @apply px-4 py-2 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200;
   }
 
-  .card-title {
+  #portfolio .card-title {
     @apply text-2xl font-bold text-gray-900 dark:text-white mb-4;
   }
 
-  .card-description {
+  #portfolio .card-description {
     @apply text-gray-600 dark:text-gray-300 leading-relaxed;
   }
 
-  /* ================= INLINE PROJECT LINKS ================= */
-  .premium-link {
+  /* Inline Link Underlines */
+  #portfolio .premium-link {
     @apply mt-7 inline-flex items-center gap-3 text-orange-500 font-semibold transition-all duration-300 relative pb-1;
   }
 
-  .premium-link::after {
+  #portfolio .premium-link::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -877,26 +875,25 @@
     transition: transform 0.3s ease-out;
   }
 
-  .premium-link:hover::after {
+  #portfolio .premium-link:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
 
-  .premium-link span {
+  #portfolio .premium-link span {
     @apply transition-transform duration-300;
   }
 
-  .premium-link:hover span {
+  #portfolio .premium-link:hover span {
     transform: translateX(6px);
   }
 
-  /* ================= PREMIUM CASE STUDY INLINE LINKS ================= */
-  .premium-case-btn {
+  /* Case Study Links */
+  #portfolio .premium-case-btn {
     @apply relative inline-flex items-center gap-2 text-orange-500 font-bold transition-all duration-300 w-fit mt-4 pb-1;
   }
 
-  /* Smooth dynamic slide underline replacing the masking cover block bug */
-  .premium-case-btn::after {
+  #portfolio .premium-case-btn::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -909,25 +906,25 @@
     transition: transform 0.3s ease-out;
   }
 
-  .premium-case-btn:hover::after {
+  #portfolio .premium-case-btn:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
 
-  .premium-case-btn span {
+  #portfolio .premium-case-btn span {
     @apply transition-transform duration-300;
   }
 
-  .premium-case-btn:hover span {
+  #portfolio .premium-case-btn:hover span {
     transform: translateX(5px);
   }
 
-  /* ================= MAIN ACTION WORK TOGGLE BUTTON ================= */
-  .show-btn {
+  /* Main Dynamic Action Button */
+  #portfolio .show-btn {
     @apply relative overflow-hidden rounded-full border border-orange-500 bg-orange-500 px-8 py-4 font-semibold text-white shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-orange-500/30;
   }
 
-  .show-btn::before {
+  #portfolio .show-btn::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -936,64 +933,67 @@
     transition: 0.5s;
   }
 
-  .show-btn:hover::before {
+  #portfolio .show-btn:hover::before {
     transform: translateY(0%);
   }
 
-  .show-btn span {
+  #portfolio .show-btn span {
     position: relative;
     z-index: 2;
   }
 
-  .hidden-card {
+  #portfolio .hidden-card {
     display: none;
   }
 </style>
 
 <!-- SCRIPT -->
 <script>
-  const projectsBtn = document.getElementById("projectsBtn");
-  const caseStudiesBtn = document.getElementById("caseStudiesBtn");
+  document.addEventListener("DOMContentLoaded", () => {
+    const projectsBtn = document.getElementById("projectsBtn");
+    const caseStudiesBtn = document.getElementById("caseStudiesBtn");
+    const projectsSection = document.getElementById("projectsSection");
+    const caseStudiesSection = document.getElementById("caseStudiesSection");
+    const toggleProjects = document.getElementById("toggleProjects");
 
-  const projectsSection = document.getElementById("projectsSection");
-  const caseStudiesSection = document.getElementById("caseStudiesSection");
+    if (projectsBtn && caseStudiesBtn && projectsSection && caseStudiesSection) {
+      projectsBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        projectsSection.classList.remove("hidden");
+        caseStudiesSection.classList.add("hidden");
+        projectsBtn.classList.add("active-toggle");
+        caseStudiesBtn.classList.remove("active-toggle");
+      });
 
-  // SECTION SELECTION INTERACTION
-  projectsBtn.addEventListener("click", () => {
-    projectsSection.classList.remove("hidden");
-    caseStudiesSection.classList.add("hidden");
+      caseStudiesBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        caseStudiesSection.classList.remove("hidden");
+        projectsSection.classList.add("hidden");
+        caseStudiesBtn.classList.add("active-toggle");
+        projectsBtn.classList.remove("active-toggle");
+      });
+    }
 
-    projectsBtn.classList.add("active-toggle");
-    caseStudiesBtn.classList.remove("active-toggle");
-  });
+    if (toggleProjects) {
+      const hiddenProjects = document.querySelectorAll(".hidden-card");
+      let projectsExpanded = false;
 
-  caseStudiesBtn.addEventListener("click", () => {
-    caseStudiesSection.classList.remove("hidden");
-    projectsSection.classList.add("hidden");
+      toggleProjects.addEventListener("click", (e) => {
+        e.preventDefault();
+        projectsExpanded = !projectsExpanded;
 
-    caseStudiesBtn.classList.add("active-toggle");
-    projectsBtn.classList.remove("active-toggle");
-  });
+        hiddenProjects.forEach(card => {
+          card.style.display = projectsExpanded ? "block" : "none";
+        });
 
-  // COLLAPSIBLE PORTFOLIO GRIDS
-  const toggleProjects = document.getElementById("toggleProjects");
-  const hiddenProjects = document.querySelectorAll(".hidden-card");
-
-  let projectsExpanded = false;
-
-  toggleProjects.addEventListener("click", () => {
-    projectsExpanded = !projectsExpanded;
-
-    hiddenProjects.forEach(card => {
-      card.style.display = projectsExpanded ? "block" : "none";
-    });
-
-    toggleProjects.querySelector("span").textContent = projectsExpanded
-      ? "Show Less Projects"
-      : "Show All Projects";
+        const btnSpan = toggleProjects.querySelector("span");
+        if (btnSpan) {
+          btnSpan.textContent = projectsExpanded ? "Show Less Projects" : "Show All Projects";
+        }
+      });
+    }
   });
 </script>
-  
 </body>
 
 </html>

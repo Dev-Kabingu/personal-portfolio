@@ -539,7 +539,7 @@
 
 
 
-  <!-- Portfolio & Case Study Section -->
+<!-- Portfolio & Case Study Section -->
 <section id="portfolio" class="py-24 bg-gray-50 dark:bg-[#0f172a] overflow-hidden">
   <div class="container mx-auto px-5">
 
@@ -659,7 +659,7 @@
           </div>
         </div>
 
-        <!-- HIDDEN PROJECTS (Fixed layout clash by stripping Tailwind's "hidden" utility class) -->
+        <!-- HIDDEN PROJECTS -->
         <div class="project-card hidden-card card-item">
           <div class="portfolio-card">
             <div class="image-wrapper">
@@ -712,7 +712,6 @@
 
       <!-- SHOW MORE PROJECTS BUTTON -->
       <div class="flex justify-center mt-14">
-        <!-- Text wrapped in an explicit span structure so z-index rules correctly layer over the background transition overlay -->
         <button id="toggleProjects" class="show-btn">
           <span>Show All Projects</span>
         </button>
@@ -774,8 +773,7 @@
 
                 <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                   Complete UX/UI redesign focused on improving navigation,
-                  strengthening community branding, and creating a more modern and engaging digital experience
-                  for the DevOps community.
+                  strengthening community branding, and creating a more modern and engaging digital experience.
                 </p>
 
                 <div class="flex flex-wrap gap-3 mb-8">
@@ -811,7 +809,6 @@
                   Accessibility-focused telehealth platform designed for elderly users.
                 </p>
 
-                <!-- Switched class pattern to premium-case-btn to resolve the commented-out layout configuration issue -->
                 <a href="#" class="premium-case-btn">
                   <span>Read Case Study →</span>
                 </a>
@@ -862,9 +859,27 @@
     @apply text-gray-600 dark:text-gray-300 leading-relaxed;
   }
 
-  /* ================= PREMIUM PROJECT LINK ================= */
+  /* ================= INLINE PROJECT LINKS ================= */
   .premium-link {
-    @apply mt-7 inline-flex items-center gap-3 text-orange-500 font-semibold transition-all duration-300;
+    @apply mt-7 inline-flex items-center gap-3 text-orange-500 font-semibold transition-all duration-300 relative pb-1;
+  }
+
+  .premium-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f97316;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+
+  .premium-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 
   .premium-link span {
@@ -875,9 +890,28 @@
     transform: translateX(6px);
   }
 
-  /* ================= PREMIUM CASE STUDY BUTTON ================= */
+  /* ================= PREMIUM CASE STUDY INLINE LINKS ================= */
   .premium-case-btn {
-    @apply relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-orange-500 px-7 py-4 font-semibold text-white shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-orange-500/30 w-fit;
+    @apply relative inline-flex items-center gap-2 text-orange-500 font-bold transition-all duration-300 w-fit mt-4 pb-1;
+  }
+
+  /* Smooth dynamic slide underline replacing the masking cover block bug */
+  .premium-case-btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f97316;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+
+  .premium-case-btn:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 
   .premium-case-btn span {
@@ -888,7 +922,7 @@
     transform: translateX(5px);
   }
 
-  /* ================= SHOW MORE BUTTON ================= */
+  /* ================= MAIN ACTION WORK TOGGLE BUTTON ================= */
   .show-btn {
     @apply relative overflow-hidden rounded-full border border-orange-500 bg-orange-500 px-8 py-4 font-semibold text-white shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-orange-500/30;
   }
@@ -911,7 +945,6 @@
     z-index: 2;
   }
 
-  /* Setup baseline hide mechanics for dynamic sections safely away from Tailwind overrides */
   .hidden-card {
     display: none;
   }
@@ -955,13 +988,12 @@
       card.style.display = projectsExpanded ? "block" : "none";
     });
 
-    // Safely update the button typography through its targeted inner span node
     toggleProjects.querySelector("span").textContent = projectsExpanded
       ? "Show Less Projects"
       : "Show All Projects";
   });
 </script>
-
+  
 </body>
 
 </html>

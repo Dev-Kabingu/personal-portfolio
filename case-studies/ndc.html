@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Nairobi DevOps Community — UX Redesign Case Study</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+
+    body{
+      font-family: 'Inter', sans-serif;
+    }
+
+    .glass-card{
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .section-title{
+      @apply text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight;
+    }
+
+    .section-paragraph{
+      @apply mt-8 text-lg leading-relaxed text-gray-600 dark:text-gray-300;
+    }
+
+    .tag{
+      @apply inline-flex items-center rounded-full bg-orange-500/10 px-5 py-2 text-sm font-semibold text-orange-500;
+    }
+
+    .overview-card{
+      @apply rounded-3xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-[#1e293b] p-7 shadow-xl transition-all duration-500 hover:-translate-y-2;
+    }
+
+    .process-card{
+      @apply rounded-3xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-[#1e293b] p-8 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl;
+    }
+
+    .research-card{
+      @apply rounded-3xl bg-gray-50 dark:bg-[#1e293b] p-6 border border-gray-100 dark:border-gray-700;
+    }
+
+    .feature-card{
+      @apply rounded-3xl overflow-hidden bg-white dark:bg-[#1e293b] border border-gray-100 dark:border-gray-700 shadow-xl transition duration-500 hover:-translate-y-2;
+    }
+
+    .feature-card img{
+      @apply transition duration-700 hover:scale-105;
+    }
+
+  </style>
+</head>
+
+<body class="bg-white dark:bg-[#0f172a] text-gray-900 dark:text-white overflow-x-hidden">
+
+  <!-- ================= HERO ================= -->
+
+  <section class="relative h-screen overflow-hidden">
+
+    <!-- Background -->
+    <img src="../images/NDO.png"
+      class="absolute inset-0 w-full h-full object-cover">
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-[#0f172a]"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto px-5 h-full flex items-center">
+
+      <div class="max-w-3xl">
+
+        <!-- Back -->
+        <a href="../index.html"
+          class="inline-flex items-center gap-3 text-orange-400 font-semibold mb-10 hover:gap-4 transition-all duration-300">
+
+          ← Back to Portfolio
+        </a>
+
+        <div class="tag mb-8">
+          Community Platform Redesign
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-bold leading-tight text-white mb-8"
+          data-aos="fade-up">
+
+          Nairobi DevOps Community
+        </h1>
+
+        <p class="text-xl text-gray-200 leading-relaxed max-w-2xl"
+          data-aos="fade-up"
+          data-aos-delay="200">
+
+          Redesigning the Nairobi DevOps Community website experience
+          to improve navigation, strengthen visual identity,
+          and create a more engaging digital community platform.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-10"
+          data-aos="fade-up"
+          data-aos-delay="300">
+
+          <span class="glass-card px-6 py-3 rounded-full text-white">
+            UI/UX Design
+          </span>
+
+          <span class="glass-card px-6 py-3 rounded-full text-white">
+            Community Platform
+          </span>
+
+          <span class="glass-card px-6 py-3 rounded-full text-white">
+            Web Redesign
+          </span>
+
+          <span class="glass-card px-6 py-3 rounded-full text-white">
+            Figma
+          </span>
+
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ================= OVERVIEW ================= -->
+
+  <section class="py-24">
+
+    <div class="container mx-auto px-5">
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+        <div class="overview-card">
+
+          <p class="text-orange-500 uppercase tracking-widest text-sm mb-3">
+            Role
+          </p>
+
+          <h3 class="text-2xl font-bold">
+            UI/UX Designer
+          </h3>
+
+        </div>
+
+        <div class="overview-card">
+
+          <p class="text-orange-500 uppercase tracking-widest text-sm mb-3">
+            Timeline
+          </p>
+
+          <h3 class="text-2xl font-bold">
+            3 Weeks
+          </h3>
+
+        </div>
+
+        <div class="overview-card">
+
+          <p class="text-orange-500 uppercase tracking-widest text-sm mb-3">
+            Tools
+          </p>
+
+          <h3 class="text-2xl font-bold">
+            Figma
+          </h3>
+
+        </div>
+
+        <div class="overview-card">
+
+          <p class="text-orange-500 uppercase tracking-widest text-sm mb-3">
+            Focus
+          </p>
+
+          <h3 class="text-2xl font-bold">
+            UX Redesign
+          </h3>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= PROBLEM ================= -->
+
+  <section class="pb-28">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-5xl">
+
+        <span class="tag">
+          Problem Statement
+        </span>
+
+        <h2 class="section-title mt-8">
+
+          The existing experience lacked
+          strong visual hierarchy and modern engagement.
+        </h2>
+
+        <p class="section-paragraph">
+
+          The Nairobi DevOps Community platform needed a refreshed user experience
+          that better represented the community’s identity while improving usability,
+          readability, and engagement.
+
+          The existing layouts felt visually inconsistent,
+          navigation lacked clarity,
+          and the platform did not fully communicate the energy
+          and professionalism of the DevOps ecosystem.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= GOALS ================= -->
+
+  <section class="pb-28">
+
+    <div class="container mx-auto px-5">
+
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+
+        <!-- Left -->
+        <div>
+
+          <span class="tag">
+            Goals
+          </span>
+
+          <h2 class="section-title mt-8">
+
+            Creating a more engaging
+            and community-driven experience.
+          </h2>
+
+          <p class="section-paragraph">
+
+            The redesign focused on modernizing the platform
+            while improving accessibility, structure,
+            and overall user interaction.
+          </p>
+
+          <div class="space-y-5 mt-10">
+
+            <div class="research-card">
+              Improve navigation clarity
+            </div>
+
+            <div class="research-card">
+              Strengthen community branding
+            </div>
+
+            <div class="research-card">
+              Create more engaging layouts
+            </div>
+
+            <div class="research-card">
+              Improve readability and accessibility
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right -->
+        <div data-aos="zoom-in">
+
+          <img src="../images/NDO.png"
+            class="rounded-[2rem] shadow-2xl">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= DESIGN PROCESS ================= -->
+
+  <section class="pb-28">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-4xl mb-16">
+
+        <span class="tag">
+          Design Process
+        </span>
+
+        <h2 class="section-title mt-8">
+
+          Reimagining the community experience
+          through modern UX principles.
+        </h2>
+
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="process-card">
+
+          <div class="text-orange-500 text-5xl font-bold mb-8">
+            01
+          </div>
+
+          <h3 class="text-2xl font-bold mb-5">
+            UX Audit
+          </h3>
+
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+
+            Reviewed the existing interface to identify usability gaps,
+            navigation inconsistencies, and layout improvements.
+          </p>
+
+        </div>
+
+        <div class="process-card">
+
+          <div class="text-orange-500 text-5xl font-bold mb-8">
+            02
+          </div>
+
+          <h3 class="text-2xl font-bold mb-5">
+            Wireframing
+          </h3>
+
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+
+            Created cleaner layouts with improved information hierarchy
+            and structured user flows.
+          </p>
+
+        </div>
+
+        <div class="process-card">
+
+          <div class="text-orange-500 text-5xl font-bold mb-8">
+            03
+          </div>
+
+          <h3 class="text-2xl font-bold mb-5">
+            Visual Design
+          </h3>
+
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+
+            Developed modern branded visuals
+            to better reflect the community’s identity and professionalism.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FINAL SOLUTION ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-5xl mb-16">
+
+        <span class="tag">
+          Final Solution
+        </span>
+
+        <h2 class="section-title mt-8">
+
+          A cleaner and more engaging
+          digital community experience.
+        </h2>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <div class="feature-card">
+
+          <div class="overflow-hidden">
+
+            <img src="../images/NDO.png"
+              class="w-full h-full object-cover">
+
+          </div>
+
+          <div class="p-8">
+
+            <h3 class="text-2xl font-bold mb-5">
+              Modern Landing Experience
+            </h3>
+
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+
+              Redesigned the homepage with stronger visual hierarchy,
+              community-focused storytelling,
+              and improved navigation clarity.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="feature-card">
+
+          <div class="overflow-hidden">
+
+            <img src="../images/NDO.png"
+              class="w-full h-full object-cover">
+
+          </div>
+
+          <div class="p-8">
+
+            <h3 class="text-2xl font-bold mb-5">
+              Improved Branding
+            </h3>
+
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+
+              Introduced cleaner layouts, modern typography,
+              and more engaging visuals to strengthen the community identity.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= REFLECTION ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-4xl">
+
+        <span class="tag">
+          Reflection
+        </span>
+
+        <h2 class="section-title mt-8">
+
+          Lessons from redesigning
+          a community platform.
+        </h2>
+
+        <p class="section-paragraph">
+
+          This project deepened my understanding of designing
+          for tech communities and event-driven platforms.
+
+          I learned how branding, layout structure,
+          and navigation design significantly influence
+          engagement and user perception within digital communities.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CTA ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div
+        class="rounded-[2rem] bg-gradient-to-r from-orange-500 to-orange-600 p-14 text-center shadow-2xl">
+
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">
+
+          Explore more projects
+        </h2>
+
+        <p class="text-orange-100 text-lg max-w-2xl mx-auto mb-10">
+
+          View additional UI/UX projects,
+          redesign concepts and digital experiences from my portfolio.
+        </p>
+
+        <a href="../index.html#portfolio"
+          class="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 font-semibold text-orange-500 transition duration-300 hover:scale-105">
+
+          Back to Portfolio →
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+  </script>
+
+</body>
+
+</html>

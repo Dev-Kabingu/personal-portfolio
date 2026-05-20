@@ -23,18 +23,26 @@
     html {
       scroll-behavior: smooth;
     }
+
+    /* Unified Global Floating Animation */
+    @keyframes globalFloat {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    .animate-float {
+      animation: globalFloat 6s ease-in-out infinite;
+    }
   </style>
 
 </head>
 
 <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
 
-  <!-- Navigation -->
   <header class="w-full py-5 bg-white dark:bg-gray-800 shadow-md fixed top-0 left-0 right-0 z-50">
     <div class="container mx-auto flex justify-between items-center px-5">
       <h1 class="text-2xl font-bold text-orange-500 dark:text-yellow-400">Dev-kabingu</h1>
 
-      <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-6">
         <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-orange-500">Home</a>
         <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-orange-500">About</a>
@@ -43,7 +51,6 @@
         <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-orange-500">Contact</a>
       </nav>
 
-      <!-- Hamburger Icon -->
       <div class="md:hidden">
         <button id="menuToggle" class="text-gray-700 dark:text-gray-300 text-2xl focus:outline-none">
           <i class="fas fa-bars"></i>
@@ -52,7 +59,6 @@
     </div>
   </header>
 
-  <!-- Mobile Menu -->
   <div id="mobileMenu"
     class="fixed top-0 right-0 w-full h-3/4 bg-gray-900 bg-opacity-95 flex flex-col items-center justify-center space-y-6 text-white text-xl transform scale-0 transition-transform duration-300 ease-in-out z-40">
     <a href="#home" onclick="closeMenu()" class="hover:text-orange-500">Home</a>
@@ -66,377 +72,534 @@
   </div>
 
 
- <!-- Hero Section -->
-<section id="home" class="relative min-h-[90vh] flex items-center justify-center bg-gray-900 overflow-hidden">
-  <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
-    
-    <!-- Text Content -->
-    <div class="md:w-1/2 text-center md:text-left" data-aos="fade-right">
-      <h2 class="text-xl text-orange-500 font-semibold">Hello There!</h2>
-      <h1 class="text-5xl font-bold text-white mt-2">I’m Mercy Kabingu</h1>
-      <p class="mt-4 text-lg text-gray-300 leading-relaxed">
-        Product Designer & UI/UX Specialist based in Kenya.  
-        <span class="block mt-2 text-orange-500 font-medium">“Designs that transform experiences and deliver results.”</span>
-      </p>
-      <!-- CTA Buttons -->
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a href="#portfolio" class="px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-lg hover:bg-orange-600 transition">Portfolio</a>
-        <a href="#contact" class="px-6 py-3 border border-orange-500 text-orange-500 font-semibold rounded-full hover:bg-orange-500 hover:text-white transition">Hire Me</a>
-      </div>
-    </div>
-
-    <!-- Image -->
-    <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
-      <img src="/images/mercy.jpeg" alt="Mercy Kabingu" 
-           class="w-96 h-96 object-cover rounded-full shadow-lg border-4 border-orange-500 animate-float">
-    </div>
-  </div>
-</section>
-
-<!-- Custom Animations -->
-<style>
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
-}
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-</style>
-
-
-    <!-- About Section -->
-<section id="about" class="py-20 bg-gray-100 dark:bg-gray-900">
-  <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
-    
-    <!-- Image -->
-    <div class="md:w-1/2 flex justify-center" data-aos="fade-right">
-      <img src="/images/mercy.jpeg" alt="Mercy Kabingu" 
-           class="w-[26rem] h-[26rem] object-cover rounded-2xl shadow-2xl border-4 border-orange-500">
-    </div>
-
-    <!-- Text Content -->
-    <div class="md:w-1/2 text-center md:text-left" data-aos="fade-left">
-      <h2 class="text-xl text-orange-500 font-semibold uppercase">About Me</h2>
-      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mt-4">Who I Am</h1>
-      <p class="mt-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-        I’m <span class="font-semibold text-orange-500">Mercy Kabingu</span>, a Product Designer & UI/UX Specialist 
-        passionate about crafting digital experiences that blend creativity with functionality. 
-        With a background in software engineering and design, I bring a unique perspective to 
-        building interfaces that are not only visually appealing but also intuitive and user‑focused.
-      </p>
-      <p class="mt-4 text-gray-600 dark:text-gray-400">
-        My work is inspired by minimal aesthetics, authentic branding, and the belief that design 
-        should solve problems while telling a story. I thrive on collaboration, innovation, and 
-        turning ideas into impactful products.
-      </p>
-
-      <!-- CTA Buttons -->
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a href="#portfolio" class="px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-lg hover:bg-orange-600 transition">View My Work</a>
-        <a href="#contact" class="px-6 py-3 border border-orange-500 text-orange-500 font-semibold rounded-full hover:bg-orange-500 hover:text-white transition">Let’s Connect</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-  
-  <!-- Services Section -->
-<section id="services" class="py-20 bg-white dark:from-gray-900 dark:to-gray-800">
-  <div class="container mx-auto px-6 text-center">
-    <h2 class="text-orange-500 text-xl font-semibold uppercase" data-aos="fade-up">My Specialization</h2>
-    <h1 class="text-4xl font-bold mt-2" data-aos="fade-up" data-aos-delay="200">Services I Provide</h1>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
+  <section id="home" class="relative min-h-[90vh] flex items-center justify-center bg-gray-900 overflow-hidden">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
       
-      <!-- Service Card -->
-      <div class="p-8 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-lg hover:scale-105 transition" data-aos="zoom-in">
-        <i class="fas fa-pencil-ruler text-3xl text-orange-500 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
-        <p class="text-gray-600 dark:text-gray-300">Crafting intuitive, user‑friendly interfaces with strong visual hierarchy and branding.</p>
+      <div class="md:w-1/2 text-center md:text-left" data-aos="fade-right">
+        <h2 class="text-xl text-orange-500 font-semibold">Hello There!</h2>
+        <h1 class="text-5xl font-bold text-white mt-2">I’m Mercy Kabingu</h1>
+        <p class="mt-4 text-lg text-gray-300 leading-relaxed">
+          Product Designer & UI/UX Specialist based in Kenya.  
+          <span class="block mt-2 text-orange-500 font-medium">“Designs that transform experiences and deliver results.”</span>
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#portfolio" class="px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-lg hover:bg-orange-600 transition">Portfolio</a>
+          <a href="#contact" class="px-6 py-3 border border-orange-500 text-orange-500 font-semibold rounded-full hover:bg-orange-500 hover:text-white transition">Hire Me</a>
+        </div>
       </div>
 
-      <!-- Service Card -->
-      <div class="p-8 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-lg hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="200">
-        <i class="fas fa-mobile-alt text-3xl text-orange-500 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">Application Design</h3>
-        <p class="text-gray-600 dark:text-gray-300">Progressive web apps and mobile platforms with visionary, modern interfaces tailored to user needs.</p>
-      </div>
-
-      <!-- Service Card -->
-      <div class="p-8 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-lg hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="400">
-        <i class="fas fa-laptop-code text-3xl text-orange-500 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">Website Design</h3>
-        <p class="text-gray-600 dark:text-gray-300">Responsive, branded websites optimized for performance, accessibility, and seamless user experience.</p>
-      </div>
-
-      <!-- Service Card -->
-      <div class="p-8 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-lg hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="600">
-        <i class="fas fa-layer-group text-3xl text-orange-500 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">Design Systems</h3>
-        <p class="text-gray-600 dark:text-gray-300">Reusable components and guidelines to ensure consistency across products and platforms.</p>
+      <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+        <img src="/images/mercy.jpeg" alt="Mercy Kabingu" 
+             class="w-96 h-96 object-cover rounded-full shadow-lg border-4 border-orange-500 animate-float">
       </div>
     </div>
-  </div>
-</section>
-  <!-- end of section -->
+  </section>
 
-  
-  <!-- Skills Section -->
-<section id="skills" class="py-20 bg-white dark:bg-gray-900">
-  <div class="container mx-auto px-6 text-center">
-    <!-- Section Heading -->
-    <h2 class="text-orange-500 text-xl font-semibold uppercase" data-aos="fade-up">My Skills</h2>
-    <h1 class="text-4xl font-bold mt-2" data-aos="fade-up" data-aos-delay="200">What I Do Best</h1>
 
-    <!-- Skills Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
+  <section id="about" class="py-20 bg-gray-100 dark:bg-gray-900">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
       
-      <!-- Skill Card -->
-      <div class="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 shadow-lg hover:shadow-2xl transition" data-aos="zoom-in">
-        <i class="fas fa-pencil-ruler text-3xl text-orange-500 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
-        <p class="text-gray-600 dark:text-gray-300">Creating user‑centered designs that enhance usability and deliver engaging digital experiences.</p>
+      <div class="md:w-1/2 flex justify-center" data-aos="fade-right">
+        <img src="/images/mercy.jpeg" alt="Mercy Kabingu" 
+             class="w-[26rem] h-[26rem] object-cover rounded-2xl shadow-2xl border-4 border-orange-500 animate-float">
       </div>
 
-      <!-- Skill Card -->
-      <div class="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 shadow-lg hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="200">
-        <i class="fas fa-code text-3xl text-orange-500 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
-        <p class="text-gray-600 dark:text-gray-300">Building responsive, dynamic websites using HTML, CSS, JavaScript, and frameworks like React.</p>
-      </div>
+      <div class="md:w-1/2 text-center md:text-left" data-aos="fade-left">
+        <h2 class="text-xl text-orange-500 font-semibold uppercase">About Me</h2>
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mt-4">Who I Am</h1>
+        <p class="mt-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          I’m <span class="font-semibold text-orange-500">Mercy Kabingu</span>, a Product Designer & UI/UX Specialist 
+          passionate about crafting digital experiences that blend creativity with functionality. 
+          With a background in software engineering and design, I bring a unique perspective to 
+          building interfaces that are not only visually appealing but also intuitive and user‑focused.
+        </p>
+        <p class="mt-4 text-gray-600 dark:text-gray-400">
+          My work is inspired by minimal aesthetics, authentic branding, and the belief that design 
+          should solve problems while telling a story. I thrive on collaboration, innovation, and 
+          turning ideas into impactful products.
+        </p>
 
-      <!-- Skill Card -->
-      <div class="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 shadow-lg hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="400">
-        <i class="fas fa-project-diagram text-3xl text-orange-500 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">Prototyping & Wireframing</h3>
-        <p class="text-gray-600 dark:text-gray-300">Designing interactive prototypes and wireframes with Figma to visualize user flows.</p>
-      </div>
-
-      <!-- Skill Card -->
-      <div class="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 shadow-lg hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="600">
-        <i class="fas fa-mobile-alt text-3xl text-orange-500 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">Responsive Design</h3>
-        <p class="text-gray-600 dark:text-gray-300">Crafting mobile‑first layouts that adapt seamlessly across all devices and screen sizes.</p>
-      </div>
-
-      <!-- Skill Card -->
-      <div class="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 shadow-lg hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="800">
-        <i class="fas fa-code-branch text-3xl text-orange-500 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">Version Control</h3>
-        <p class="text-gray-600 dark:text-gray-300">Collaborating with teams using Git to maintain project integrity and streamline workflows.</p>
-      </div>
-
-      <!-- Skill Card -->
-      <div class="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 shadow-lg hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="1000">
-        <i class="fas fa-lightbulb text-3xl text-orange-500 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">Problem Solving</h3>
-        <p class="text-gray-600 dark:text-gray-300">Approaching challenges with creativity and analytical thinking to deliver effective solutions.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  <!-- Work Experience Section -->
-<section id="experience" class="py-20 bg-gray-100 dark:bg-gray-900">
-  <div class="container mx-auto px-6">
-    
-    <!-- Section Heading -->
-    <div class="text-center mb-12">
-      <h2 class="text-orange-500 text-xl font-semibold uppercase" data-aos="fade-up">My Journey</h2>
-      <h1 class="text-4xl font-bold mt-2 text-gray-900 dark:text-white" data-aos="fade-up" data-aos-delay="200">Work Experience</h1>
-      <p class="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-        A look at the places where I’ve learned, grown, and contributed as a designer.
-      </p>
-    </div>
-
-    <!-- Timeline -->
-    <div class="relative border-l-4 border-orange-500 dark:border-orange-400 ml-6">
-      
-      <!-- Zynamis Apprenticeship -->
-      <div class="mb-12 ml-6" data-aos="fade-right">
-        <div class="absolute -left-4 w-8 h-8 bg-orange-500 rounded-full border-4 border-white dark:border-gray-900 flex items-center justify-center">
-          <i class="fas fa-briefcase text-white text-sm"></i>
-        </div>
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition">
-          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">UI/UX Designer (Apprenticeship)</h3>
-          <p class="text-sm text-orange-500 font-medium">Zynamis • 2025</p>
-          <p class="mt-3 text-gray-600 dark:text-gray-300">
-            Completed an apprenticeship program where I practiced designing user‑friendly interfaces, 
-            learned industry tools, and built a strong foundation in product design.
-          </p>
-        </div>
-      </div>
-
-      <!-- Nairobi DevOps Community -->
-      <div class="mb-12 ml-6" data-aos="fade-left">
-        <div class="absolute -left-4 w-8 h-8 bg-orange-500 rounded-full border-4 border-white dark:border-gray-900 flex items-center justify-center">
-          <i class="fas fa-users text-white text-sm"></i>
-        </div>
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition">
-          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">UI/UX Designer</h3>
-          <p class="text-sm text-orange-500 font-medium">Nairobi DevOps Community • 2025 – Present</p>
-          <p class="mt-3 text-gray-600 dark:text-gray-300">
-            Contributing to community projects by designing clean, simple, and effective user experiences. 
-            Supporting developers and fellow designers with layouts, prototypes, and design systems.
-          </p>
-        </div>
-      </div>
-
-            <!-- Africa DevOps Summit -->
-      <div class="mb-12 ml-6" data-aos="fade-left">
-        <div class="absolute -left-4 w-8 h-8 bg-orange-500 rounded-full border-4 border-white dark:border-gray-900 flex items-center justify-center">
-          <i class="fas fa-globe text-white text-sm"></i>
-        </div>
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition">
-          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">UI/UX Designer</h3>
-          <p class="text-sm text-orange-500 font-medium">Africa DevOps Summit • 2025</p>
-          <p class="mt-3 text-gray-600 dark:text-gray-300">
-            Designed the Landing, About, Partners, and Sponsors pages for the Africa DevOps Summit. 
-            Focused on branded, accessible, and engaging layouts that strengthened the summit’s identity 
-            and enhanced participant experience through clear storytelling and modern UI patterns.
-          </p>
-        </div>
-      </div>
-
-
-    </div>
-  </div>
-</section>
-
-  
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="py-16">
-    <div class="container mx-auto px-5 text-center">
-      <h2 class="text-orange-500" data-aos="fade-up">Portfolio</h2>
-      <h1 class="text-3xl font-bold" data-aos="fade-up" data-aos-delay="200">My Amazing Works</h1>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-        
-         
-        <div class="p-6 bg-white dark:bg-gray-700 shadow-lg rounded-lg text-left" data-aos="zoom-in" >
-          <img src="/images/glen.PNG" alt="Project 1" class="rounded-md">
-          <h1 class="mt-4 font-bold text-xl text-gray-800 mb-2">Affordable Glen Boutique</h1>
-          <p>A client project built with the MERN stack, designed to deliver a smooth and responsive shopping
-            experience. Features include dynamic product listings, real-time updates, and a clean amber-themed UI
-            tailored to the brand’s identity.
-          </p>
-          <a href="" class="text-blue-500 hover:underline  ">Visit GreenRoots Reviver</a>
-        </div>
-        <div class="p-6 bg-white dark:bg-gray-700 shadow-lg rounded-lg text-left" data-aos="zoom-in">
-          <img src="/images/greenroots.PNG" alt="Project 2" class="rounded-md">
-          <h1 class="mt-4 font-bold text-xl text-gray-800 mb-2">GreenRoots Revivers</h1>
-          <p> A client project for a tree nursery business. I built a responsive website using the MERN stack,
-            showcasing plant varieties with a nature-inspired design that reflects the brand’s eco-friendly mission.</p>
-          <a href="https://green-roots-revivers.vercel.app/" class="text-blue-500 hover:underline">Visit GreenRoots Reviver</a>
-        </div>
-
-            <div class="p-6 bg-white dark:bg-gray-700 shadow-lg rounded-lg text-left" data-aos="zoom-in">
-          <img src="/images/NDO.png" alt="Project 2" class="rounded-md">
-          <h1 class="mt-4 font-bold text-xl text-gray-800 mb-2">Nairobi DevOps Community</h1>
-          <p> Complete UI/UX redesign of the Nairobi DevOps Community website, delivering modern layouts, branded visuals, and improved navigation to strengthen community identity and engagement.</p>
-          <a href="https://www.figma.com/proto/bfjQYIxlaASXkyLYQXhVMh/NDC-Redesign--Copy-?node-id=5252-5806&t=xM5xUPaXGRooUDnI-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3222%3A526" class="text-blue-500 hover:underline">Nairobi DevOps Community </a>
-        </div>
-
-
-        
-            <div class="p-6 bg-white dark:bg-gray-700 shadow-lg rounded-lg text-left" data-aos="zoom-in">
-          <img src="/images/summit.PNG" alt="Project 2" class="rounded-md">
-          <h1 class="mt-4 font-bold text-xl text-gray-800 mb-2">Africa DevOps Summit</h1>
-          <p> UI/UX design for Africa DevOps Summit landing pages, about page and the sponsers page and engaging digital experiences that highlight the summit’s identity and enhance participant interaction. </p>
-          <a href="https://www.figma.com/proto/bfjQYIxlaASXkyLYQXhVMh/NDC-Redesign--Copy-?node-id=6061-1886&t=UTGckc1nE1SXluQ0-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A2&starting-point-node-id=6061%3A1886&show-proto-sidebar=1" class="text-blue-500 hover:underline">Africa DevOps Summit </a>
-        </div>
-
-
-        <!-- Mikira Project -->
-        <div class="p-6 bg-white dark:bg-gray-700 shadow-lg rounded-lg text-left" data-aos="zoom-in">
-          <img src="/images/mekira.PNG" alt="Mikira Project" class="rounded-md">
-          <h1 class="mt-4 font-bold text-xl text-gray-800 mb-2">Mikira Clothing Store App</h1>
-          <p>
-            A UI/UX design project for a modern clothing store app. Focused on creating a clean, 
-            responsive interface with intuitive navigation, branded visuals, and engaging product 
-            displays to enhance the shopping experience. Includes prototypes for browsing, cart, 
-            and checkout flows.
-          </p>
-          <a href="https://www.figma.com/proto/hs1AWT3Mei1ri9Sz37Aocv/MEKIRA?node-id=35-76&t=PWePXwCVJ2jW7XZy-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=74%3A2087&show-proto-sidebar=1" class="text-blue-500 hover:underline">View Mikira Project</a>
-        </div>
-
-        
-        <div class="p-6 bg-white dark:bg-gray-700 shadow-lg rounded-lg text-left" data-aos="zoom-in">
-  <img src="/images/savannah-telehealth.PNG" alt="Savannah Telehealth Project" class="rounded-md">
-  <h1 class="mt-4 font-bold text-xl text-gray-800 mb-2">Savannah Informatics – Telehealth Design Assessment</h1>
-  <p>
-    Designed a user-friendly telehealth platform tailored for elderly users. The project included a full case study,
-    high-fidelity prototype, and accessibility-focused workflows to simplify healthcare access from home.
-  </p>
-  <a href="https://www.figma.com/proto/qljmSCDcsWpp7uS3ibu817/CarePlus-Design---Savannah-Test?page-id=0%3A1&node-id=4-8&viewport=3%2C224%2C0.16&t=rNrlXLlD0Ia3DBcP-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=4%3A8" class="text-blue-500 hover:underline">View the Prototype</a>
-</div>
-
-        
-        <div class="p-6 bg-white dark:bg-gray-700 shadow-lg rounded-lg text-left" data-aos="zoom-in">
-          <img src="/images/edutogether home page.PNG" alt="Project 3" class="rounded-md">
-          <h1 class="mt-4 font-bold text-xl text-gray-800 mb-2">EduTogether</h1>
-          <p> The project aimed at bridging communication between parents and teachers. The platform was built with a
-            focus on clarity and ease of use, featuring tools for updates, feedback, and scheduling, all within a clean
-            and accessible interface.</p>
-        </div>
-        <div class="p-6 bg-white dark:bg-gray-700 shadow-lg rounded-lg text-left" data-aos="zoom-in">
-          <img src="/images/homerental.PNG" alt="Project 3" class="rounded-md">
-          <h1 class="mt-4 font-bold text-xl text-gray-800 mb-2">Dream Home UI design</h1>
-          <p>A minimal and user-friendly mobile app UI for browsing rental houses. The design focuses on simplicity and ease of navigation, with clean layouts, property previews, and essential details to help users explore options quickly and effortlessly.</p>
-            <a href="https://www.figma.com/proto/xmUZ0z5eQkzyyPls2bnyhA/mobile-app-for-rental-houses?node-id=15-7&p=f&t=DAvcVgUPNoGbNbMn-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=15%3A22" class="text-blue-500 hover:underline">View the Design</a>
-        </div>
-        <div class="p-6 bg-white dark:bg-gray-700 shadow-lg rounded-lg text-left" data-aos="zoom-in">
-          <img src="/images/tablet wildlife.PNG" alt="Project 3" class="rounded-md">
-          <h1 class="mt-4 font-bold text-xl text-gray-800 mb-2">Tour & Travel UI</h1>
-          <p> A visually engaging and responsive landing page design for a tour and travel app, tailored for tablet screens. It showcases vibrant destination highlights, easy-to-navigate tour categories, and compelling call-to-action sections — all crafted to spark wanderlust and drive user exploration.</p>
-            <a href="https://www.figma.com/proto/PjUhtL94qjKM5pstuTKjbw/Beauty-of-Africa?node-id=4-3&p=f&t=fRu9l2QnVEh1NfDw-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" class="text-blue-500 hover:underline">View The Design</a>
-        </div>
-        <div class="p-6 bg-white dark:bg-gray-700 shadow-lg rounded-lg text-left" data-aos="zoom-in">
-          <img src="/images/mobile-youtube.PNG" alt="Project 3" class="rounded-md">
-          <h1 class="mt-4 font-bold text-xl text-gray-800 mb-2">Mobile Youtube UI Clone</h1>
-          <p> A clean and modern mobile UI design for a YouTube-inspired app. It features a familiar layout with a video feed, thumbnail previews, and a minimal bottom navigation — crafted to deliver a polished look and smooth browsing experience for video content.</p>
-            <a href="https://www.figma.com/proto/gVLAbIWffPsUGjIIuQxYtz/Youtube-clone-prototype?node-id=1-2&t=IXoLSdqRbMemJYyj-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" class="text-blue-500 hover:underline">View The Design</a>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#portfolio" class="px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-lg hover:bg-orange-600 transition">View My Work</a>
+          <a href="#contact" class="px-6 py-3 border border-orange-500 text-orange-500 font-semibold rounded-full hover:bg-orange-500 hover:text-white transition">Let’s Connect</a>
         </div>
       </div>
     </div>
   </section>
-  <!-- End of protfolio section  -->
-
-
-
-
-
 
   
+  <section id="services" class="py-20 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-orange-500 text-xl font-semibold uppercase" data-aos="fade-up">My Specialization</h2>
+      <h1 class="text-4xl font-bold mt-2" data-aos="fade-up" data-aos-delay="200">Services I Provide</h1>
 
-  <!-- contact -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
+        
+        <div class="p-8 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-lg hover:scale-105 transition" data-aos="zoom-in">
+          <i class="fas fa-pencil-ruler text-3xl text-orange-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
+          <p class="text-gray-600 dark:text-gray-300">Crafting intuitive, user‑friendly interfaces with strong visual hierarchy and branding.</p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-lg hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fas fa-mobile-alt text-3xl text-orange-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Application Design</h3>
+          <p class="text-gray-600 dark:text-gray-300">Progressive web apps and mobile platforms with visionary, modern interfaces tailored to user needs.</p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-lg hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="400">
+          <i class="fas fa-laptop-code text-3xl text-orange-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Website Design</h3>
+          <p class="text-gray-600 dark:text-gray-300">Responsive, branded websites optimized for performance, accessibility, and seamless user experience.</p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-lg hover:scale-105 transition" data-aos="zoom-in" data-aos-delay="600">
+          <i class="fas fa-layer-group text-3xl text-orange-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Design Systems</h3>
+          <p class="text-gray-600 dark:text-gray-300">Reusable components and guidelines to ensure consistency across products and platforms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="skills" class="py-20 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-orange-500 text-xl font-semibold uppercase" data-aos="fade-up">My Skills</h2>
+      <h1 class="text-4xl font-bold mt-2" data-aos="fade-up" data-aos-delay="200">What I Do Best</h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
+        <div class="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 shadow-lg hover:shadow-2xl transition" data-aos="zoom-in">
+          <i class="fas fa-pencil-ruler text-3xl text-orange-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
+          <p class="text-gray-600 dark:text-gray-300">Creating user‑centered designs that enhance usability and deliver engaging digital experiences.</p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 shadow-lg hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fas fa-code text-3xl text-orange-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
+          <p class="text-gray-600 dark:text-gray-300">Building responsive, dynamic websites using HTML, CSS, JavaScript, and frameworks like React.</p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 shadow-lg hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="400">
+          <i class="fas fa-project-diagram text-3xl text-orange-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Prototyping & Wireframing</h3>
+          <p class="text-gray-600 dark:text-gray-300">Designing interactive prototypes and wireframes with Figma to visualize user flows.</p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 shadow-lg hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="600">
+          <i class="fas fa-mobile-alt text-3xl text-orange-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Responsive Design</h3>
+          <p class="text-gray-600 dark:text-gray-300">Crafting mobile‑first layouts that adapt seamlessly across all devices and screen sizes.</p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 shadow-lg hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="800">
+          <i class="fas fa-code-branch text-3xl text-orange-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Version Control</h3>
+          <p class="text-gray-600 dark:text-gray-300">Collaborating with teams using Git to maintain project integrity and streamline workflows.</p>
+        </div>
+
+        <div class="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 shadow-lg hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="1000">
+          <i class="fas fa-lightbulb text-3xl text-orange-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Problem Solving</h3>
+          <p class="text-gray-600 dark:text-gray-300">Approaching challenges with creativity and analytical thinking to deliver effective solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="experience" class="py-20 bg-gray-100 dark:bg-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-orange-500 text-xl font-semibold uppercase" data-aos="fade-up">My Journey</h2>
+        <h1 class="text-4xl font-bold mt-2 text-gray-900 dark:text-white" data-aos="fade-up" data-aos-delay="200">Work Experience</h1>
+        <p class="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          A look at the places where I’ve learned, grown, and contributed as a designer.
+        </p>
+      </div>
+
+      <div class="relative border-l-4 border-orange-500 dark:border-orange-400 ml-6">
+        <div class="mb-12 ml-6" data-aos="fade-right">
+          <div class="absolute -left-4 w-8 h-8 bg-orange-500 rounded-full border-4 border-white dark:border-gray-900 flex items-center justify-center">
+            <i class="fas fa-briefcase text-white text-sm"></i>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition">
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">UI/UX Designer (Apprenticeship)</h3>
+            <p class="text-sm text-orange-500 font-medium">Zynamis • 2025</p>
+            <p class="mt-3 text-gray-600 dark:text-gray-300">
+              Completed an apprenticeship program where I practiced designing user‑friendly interfaces, 
+              learned industry tools, and built a strong foundation in product design.
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-12 ml-6" data-aos="fade-left">
+          <div class="absolute -left-4 w-8 h-8 bg-orange-500 rounded-full border-4 border-white dark:border-gray-900 flex items-center justify-center">
+            <i class="fas fa-users text-white text-sm"></i>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition">
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">UI/UX Designer</h3>
+            <p class="text-sm text-orange-500 font-medium">Nairobi DevOps Community • 2025 – Present</p>
+            <p class="mt-3 text-gray-600 dark:text-gray-300">
+              Contributing to community projects by designing clean, simple, and effective user experiences. 
+              Supporting developers and fellow designers with layouts, prototypes, and design systems.
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-12 ml-6" data-aos="fade-left">
+          <div class="absolute -left-4 w-8 h-8 bg-orange-500 rounded-full border-4 border-white dark:border-gray-900 flex items-center justify-center">
+            <i class="fas fa-globe text-white text-sm"></i>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition">
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">UI/UX Designer</h3>
+            <p class="text-sm text-orange-500 font-medium">Africa DevOps Summit • 2025</p>
+            <p class="mt-3 text-gray-600 dark:text-gray-300">
+              Designed the Landing, About, Partners, and Sponsors pages for the Africa DevOps Summit. 
+              Focused on branded, accessible, and engaging layouts that strengthened the summit’s identity 
+              and enhanced participant experience through clear storytelling and modern UI patterns.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="portfolio" class="py-24 bg-gray-50 dark:bg-[#0f172a] overflow-hidden">
+    <div class="container mx-auto px-5">
+
+      <div class="text-center max-w-3xl mx-auto">
+        <p class="text-orange-500 font-semibold tracking-widest uppercase mb-3" data-aos="fade-up">
+          Portfolio
+        </p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight" data-aos="fade-up" data-aos-delay="100">
+          Selected Projects & <span class="text-orange-500">Case Studies</span>
+        </h2>
+        <p class="mt-5 text-gray-600 dark:text-gray-300 text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+          A collection of UI/UX design projects and product experiences focused on creating intuitive,
+          accessible, and visually engaging digital products.
+        </p>
+      </div>
+
+      <div class="flex justify-center mt-12" data-aos="zoom-in">
+        <div class="bg-white dark:bg-[#1e293b] p-2 rounded-full shadow-xl flex gap-2 border border-gray-200 dark:border-gray-700">
+          <button id="projectsBtn" class="toggle-btn active-toggle px-7 py-3 rounded-full font-medium transition-all duration-300">
+            Projects
+          </button>
+          <button id="caseStudiesBtn" class="toggle-btn px-7 py-3 rounded-full font-medium transition-all duration-300">
+            Case Studies
+          </button>
+        </div>
+      </div>
+
+      <div id="projectsSection" class="mt-16 transition-all duration-500">
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div class="project-card card-item" data-aos="fade-up">
+            <div class="portfolio-card">
+              <div class="image-wrapper"><img src="/images/glen.PNG" alt="Affordable Glen Boutique"></div>
+              <div class="p-6">
+                <span class="tag">MERN Stack</span>
+                <h3 class="card-title">Affordable Glen Boutique</h3>
+                <p class="card-description">Responsive shopping experience with dynamic product listings and clean brand-focused UI.</p>
+                <a href="#" class="premium-link"><span>View Project →</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card card-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-card">
+              <div class="image-wrapper"><img src="/images/greenroots.PNG" alt="GreenRoots Revivers"></div>
+              <div class="p-6">
+                <span class="tag">Eco Brand</span>
+                <h3 class="card-title">GreenRoots Revivers</h3>
+                <p class="card-description">Nature-inspired responsive website for a tree nursery business focused on eco-friendly storytelling.</p>
+                <a href="https://green-roots-revivers.vercel.app/" class="premium-link"><span>Visit Website →</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card card-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="portfolio-card">
+              <div class="image-wrapper"><img src="/images/NDO.png" alt="Nairobi DevOps Community"></div>
+              <div class="p-6">
+                <span class="tag">UI/UX Redesign</span>
+                <h3 class="card-title">Nairobi DevOps Community</h3>
+                <p class="card-description">Modern redesign improving navigation, visual branding, and community engagement.</p>
+                <a href="https://www.figma.com/proto/bfjQYIxlaASXkyLYQXhVMh/NDC-Redesign--Copy-?node-id=5252-5806" class="premium-link"><span>View Prototype →</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card hidden-card card-item">
+            <div class="portfolio-card">
+              <div class="image-wrapper"><img src="/images/mekira.PNG" alt="Mikira Clothing Store"></div>
+              <div class="p-6">
+                <span class="tag">Fashion App</span>
+                <h3 class="card-title">Mikira Clothing Store</h3>
+                <p class="card-description">Clean and modern fashion shopping experience with intuitive workflows and checkout prototypes.</p>
+                <a href="https://www.figma.com/proto/hs1AWT3Mei1ri9Sz37Aocv/MEKIRA" class="premium-link"><span>View Design →</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card hidden-card card-item">
+            <div class="portfolio-card">
+              <div class="image-wrapper"><img src="/images/summit.PNG" alt="Africa DevOps Summit"></div>
+              <div class="p-6">
+                <span class="tag">Event Experience</span>
+                <h3 class="card-title">Africa DevOps Summit</h3>
+                <p class="card-description">Event-focused UX design with immersive layouts, partners directories, and clear branding grids.</p>
+                <a href="https://www.figma.com/proto/bfjQYIxlaASXkyLYQXhVMh/NDC-Redesign--Copy-?node-id=6061-1886" class="premium-link"><span>View Design →</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card hidden-card card-item">
+            <div class="portfolio-card">
+              <div class="image-wrapper"><img src="/images/edutogether home page.PNG" alt="EduTogether"></div>
+              <div class="p-6">
+                <span class="tag">EdTech Solution</span>
+                <h3 class="card-title">EduTogether</h3>
+                <p class="card-description">Bridging communication between parents and educators featuring analytics panels within a clean UI.</p>
+                <a href="#" class="premium-link"><span>View System →</span></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flex justify-center mt-14">
+          <button id="toggleProjects" class="show-btn">
+            <span>Show All Projects</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="caseStudiesSection" class="hidden mt-16">
+        <div class="grid grid-cols-1 gap-10">
+
+          <div class="case-study-card case-item" data-aos="fade-up">
+            <div class="bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700">
+              <div class="grid md:grid-cols-2 gap-0">
+                <div class="overflow-hidden">
+                  <img src="/images/nexa-banner.png" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Nexa App Layout">
+                </div>
+                <div class="p-10 flex flex-col justify-center">
+                  <span class="tag mb-4">Featured Case Study</span>
+                  <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-5">Nexa Banking App</h2>
+                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                    A modern fintech banking experience focused on simplifying digital finance through intuitive UX, premium visuals, and frictionless interactions.
+                  </p>
+                  <div class="flex flex-wrap gap-3 mb-8">
+                    <span class="mini-tag">UX Research</span>
+                    <span class="mini-tag">Fintech</span>
+                    <span class="mini-tag">Mobile Design</span>
+                  </div>
+                  <a href="case-studies/nexa.html" class="premium-case-btn"><span>Read Full Case Study →</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="case-study-card case-item" data-aos="fade-up">
+            <div class="bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700">
+              <div class="grid md:grid-cols-2 gap-0">
+                <div class="overflow-hidden">
+                  <img src="/images/NDO.png" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Nairobi DevOps Overhaul">
+                </div>
+                <div class="p-10 flex flex-col justify-center">
+                  <span class="tag mb-4">Community Overhaul</span>
+                  <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-5">Nairobi DevOps Community</h2>
+                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                    Complete UX/UI redesign focused on improving navigation systems, strengthening core community branding identity, and creating modern developer spaces.
+                  </p>
+                  <div class="flex flex-wrap gap-3 mb-8">
+                    <span class="mini-tag">UX Redesign</span>
+                    <span class="mini-tag">Community</span>
+                    <span class="mini-tag">Web Experience</span>
+                  </div>
+                  <a href="/case-studies/ndc.html" class="premium-case-btn"><span>Read Full Case Study →</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="case-study-card case-item" data-aos="fade-up">
+            <div class="bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700">
+              <div class="grid md:grid-cols-2 gap-0">
+                <div class="overflow-hidden">
+                  <img src="/images/savannah-telehealth.PNG" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Savannah Telehealth Dashboard">
+                </div>
+                <div class="p-10 flex flex-col justify-center">
+                  <span class="tag mb-4">Healthcare UX</span>
+                  <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-5">Savannah Informatics</h2>
+                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                    Accessibility-focused telehealth design iteration optimized extensively for elderly interface readability workflows.
+                  </p>
+                  <div class="flex flex-wrap gap-3 mb-8">
+                    <span class="mini-tag">Accessibility</span>
+                    <span class="mini-tag">Telehealth</span>
+                    <span class="mini-tag">Figma Case Study</span>
+                  </div>
+                  <a href="https://www.figma.com/proto/qljmSCDcsWpp7uS3ibu817/CarePlus-Design---Savannah-Test" class="premium-case-btn"><span>Read Case Study →</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    #portfolio .active-toggle {
+      background: linear-gradient(to right, #f97316, #fb923c);
+      color: white;
+      box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+    }
+
+    #portfolio .portfolio-card {
+      @apply bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-700 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl;
+    }
+
+    #portfolio .image-wrapper {
+      @apply overflow-hidden;
+    }
+
+    #portfolio .image-wrapper img {
+      @apply w-full h-64 object-cover transition duration-700 hover:scale-110;
+    }
+
+    #portfolio .tag {
+      @apply inline-block text-sm bg-orange-100 dark:bg-orange-500/20 text-orange-500 px-4 py-1 rounded-full font-medium mb-4;
+    }
+
+    #portfolio .mini-tag {
+      @apply px-4 py-2 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200;
+    }
+
+    #portfolio .card-title {
+      @apply text-2xl font-bold text-gray-900 dark:text-white mb-4;
+    }
+
+    #portfolio .card-description {
+      @apply text-gray-600 dark:text-gray-300 leading-relaxed;
+    }
+
+    /* Premium Scoped Link Indicator Triggers */
+    #portfolio .premium-link {
+      @apply mt-7 inline-flex items-center gap-3 text-orange-500 font-semibold transition-all duration-300 relative pb-1 w-fit;
+    }
+
+    #portfolio .premium-link::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+
+    #portfolio .premium-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    #portfolio .premium-link span {
+      @apply transition-transform duration-300;
+    }
+
+    #portfolio .premium-link:hover span {
+      transform: translateX(6px);
+    }
+
+    /* Premium Case Study Scoped Typography Underlines */
+    #portfolio .premium-case-btn {
+      @apply relative inline-flex items-center gap-2 text-orange-500 font-bold transition-all duration-300 w-fit mt-4 pb-1;
+    }
+
+    #portfolio .premium-case-btn::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+
+    #portfolio .premium-case-btn:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    #portfolio .premium-case-btn span {
+      @apply transition-transform duration-300;
+    }
+
+    #portfolio .premium-case-btn:hover span {
+      transform: translateX(5px);
+    }
+
+    /* Control Button Layout Action Classes */
+    #portfolio .show-btn {
+      @apply relative overflow-hidden rounded-full border border-orange-500 bg-orange-500 px-8 py-4 font-semibold text-white shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-orange-500/30;
+    }
+
+    #portfolio .show-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, #fb923c, #f97316);
+      transform: translateY(100%);
+      transition: 0.5s;
+    }
+
+    #portfolio .show-btn:hover::before {
+      transform: translateY(0%);
+    }
+
+    #portfolio .show-btn span {
+      position: relative;
+      z-index: 2;
+    }
+
+    #portfolio .hidden-card {
+      display: none;
+    }
+  </style>
+
+
   <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-900">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
         <h2 class="text-orange-500 text-xl font-semibold uppercase" data-aos="fade-up">Contact</h2>
-        <h1 class="text-4xl font-bold text-gray-800 dark:text-white mt-4" data-aos="fade-up" data-aos-delay="200">Let’s
-          Work Together</h1>
+        <h1 class="text-4xl font-bold text-gray-800 dark:text-white mt-4" data-aos="fade-up" data-aos-delay="200">Let’s Work Together</h1>
         <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="300">
           Have a project, idea, or just want to say hi? Drop me a message or connect with me on the platforms below.
         </p>
       </div>
 
-      <!-- Grid Layout -->
       <div class="grid md:grid-cols-2 gap-12 items-start">
-
-        <!-- Contact Form -->
         <form action="https://formspree.io/f/xjkyqzwy" method="POST"
-          class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg space-y-6" data-aos="fade-right"
-          data-aos-delay="400">
-          <input type="text" name="name" placeholder="Your Name"
+          class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg space-y-6" data-aos="fade-right" data-aos-delay="400">
+          <input type="text" name="name" placeholder="Your Name" required
             class="w-full p-4 rounded-md border border-gray-300 focus:ring-2 focus:ring-orange-500 dark:bg-gray-700 dark:text-white">
-          <input type="email" name="email" placeholder="Your Email"
+          <input type="email" name="email" placeholder="Your Email" required
             class="w-full p-4 rounded-md border border-gray-300 focus:ring-2 focus:ring-orange-500 dark:bg-gray-700 dark:text-white">
-          <textarea name="message" rows="5" placeholder="Your Message"
+          <textarea name="message" rows="5" placeholder="Your Message" required
             class="w-full p-4 rounded-md border border-gray-300 focus:ring-2 focus:ring-orange-500 dark:bg-gray-700 dark:text-white"></textarea>
           <button type="submit"
             class="w-full py-3 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 transition duration-300">
@@ -444,12 +607,8 @@
           </button>
         </form>
 
-        <!-- Social Links + CV -->
-        <div class="flex flex-col items-center justify-center space-y-6 text-center" data-aos="fade-left"
-          data-aos-delay="500">
+        <div class="flex flex-col items-center justify-center space-y-6 text-center" data-aos="fade-left" data-aos-delay="500">
           <p class="text-lg text-gray-700 dark:text-gray-300 font-medium">Connect with me:</p>
-
-          <!-- Icons -->
           <div class="flex space-x-5">
             <a href="https://github.com/Dev-Kabingu" target="_blank"
               class="text-2xl text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 p-3 rounded-full hover:text-orange-500 hover:border-orange-500 transition">
@@ -461,29 +620,22 @@
             </a>
           </div>
 
-          <!-- Download CV Button -->
           <a href="/images/Mercy Nduta Kabingu cv.pdf" download
             class="inline-flex items-center gap-2 mt-4 px-6 py-3 bg-orange-500 text-white font-semibold rounded-md shadow-md hover:bg-orange-600 transition">
             <i class="fas fa-file-download"></i> Download CV
           </a>
-
-          <p class="text-sm text-gray-500 dark:text-gray-400 max-w-sm mt-2">I’m open to freelance projects,
-            collaborations, and full-time roles. Let’s build something great together.</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 max-w-sm mt-2">I’m open to freelance projects, collaborations, and full-time roles. Let’s build something great together.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-gray-900 text-white py-10">
     <div class="container mx-auto px-5 grid md:grid-cols-3 gap-8 text-center md:text-left">
-      <!-- Logo / Name -->
       <div>
         <h2 class="text-2xl font-bold text-orange-500 mb-2">Mercy Kabingu</h2>
         <p class="text-gray-400">UI/UX Designer & Frontend Developer from Kenya.</p>
       </div>
-
-      <!-- Quick Links -->
       <div>
         <h3 class="text-lg font-semibold mb-3 text-orange-400">Quick Links</h3>
         <ul class="space-y-2">
@@ -493,36 +645,29 @@
           <li><a href="#contact" class="hover:text-orange-500 transition">Contact</a></li>
         </ul>
       </div>
-
-      <!-- Socials -->
       <div>
         <h3 class="text-lg font-semibold mb-3 text-orange-400">Connect with Me</h3>
         <div class="flex justify-center md:justify-start space-x-4 text-2xl">
-          <a href="https://github.com/Dev-Kabingu" target="_blank" class="hover:text-orange-500 transition"><i
-              class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/mercy-kabingu-552175334/" target="_blank" class="hover:text-orange-500 transition"><i
-              class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Dev-Kabingu" target="_blank" class="hover:text-orange-500 transition"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/mercy-kabingu-552175334/" target="_blank" class="hover:text-orange-500 transition"><i class="fab fa-linkedin"></i></a>
           <a href="mailto:your@email.com" class="hover:text-orange-500 transition"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </div>
-
     <div class="text-center mt-10 text-gray-500 text-sm border-t border-gray-700 pt-5">
       &copy; <span id="year"></span> Mercy Kabingu. All rights reserved.
     </div>
-
-    <!-- Optional Script for Dynamic Year -->
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
   </footer>
 
-
-  <!-- Scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
+    // Setup Copyright Calendar Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Init Scroll Animation Layout Engines
     AOS.init();
 
+    // Mobile Navigation Controls
     const menu = document.getElementById('mobileMenu');
     const toggle = document.getElementById('menuToggle');
 
@@ -535,465 +680,52 @@
       menu.classList.toggle('scale-0');
       menu.classList.toggle('scale-100');
     });
-  </script>
 
-<!-- Portfolio & Case Study Section -->
-<section id="portfolio" class="py-24 bg-gray-50 dark:bg-[#0f172a] overflow-hidden">
-  <div class="container mx-auto px-5">
-
-    <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto">
-      <p class="text-orange-500 font-semibold tracking-widest uppercase mb-3" data-aos="fade-up">
-        Portfolio
-      </p>
-
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight" data-aos="fade-up" data-aos-delay="100">
-        Selected Projects & <span class="text-orange-500">Case Studies</span>
-      </h2>
-
-      <p class="mt-5 text-gray-600 dark:text-gray-300 text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-        A collection of UI/UX design projects and product experiences focused on creating intuitive,
-        accessible, and visually engaging digital products.
-      </p>
-    </div>
-
-    <!-- Toggle Switches -->
-    <div class="flex justify-center mt-12" data-aos="zoom-in">
-      <div class="bg-white dark:bg-[#1e293b] p-2 rounded-full shadow-xl flex gap-2 border border-gray-200 dark:border-gray-700">
-        
-        <button id="projectsBtn"
-          class="toggle-btn active-toggle px-7 py-3 rounded-full font-medium transition-all duration-300">
-          Projects
-        </button>
-
-        <button id="caseStudiesBtn"
-          class="toggle-btn px-7 py-3 rounded-full font-medium transition-all duration-300">
-          Case Studies
-        </button>
-
-      </div>
-    </div>
-
-    <!-- ================= PROJECTS SECTION ================= -->
-    <div id="projectsSection" class="mt-16 transition-all duration-500">
-
-      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- CARD 1 -->
-        <div class="project-card card-item" data-aos="fade-up">
-          <div class="portfolio-card">
-            <div class="image-wrapper">
-              <img src="/images/glen.PNG" alt="Affordable Glen Boutique Snapshot">
-            </div>
-
-            <div class="p-6">
-              <span class="tag">MERN Stack</span>
-
-              <h3 class="card-title">
-                Affordable Glen Boutique
-              </h3>
-
-              <p class="card-description">
-                Responsive shopping experience with dynamic product listings,
-                real-time updates and clean brand-focused UI.
-              </p>
-
-              <a href="#" class="premium-link">
-                <span>View Project →</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="project-card card-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-card">
-            <div class="image-wrapper">
-              <img src="/images/greenroots.PNG" alt="GreenRoots Revivers Snapshot">
-            </div>
-
-            <div class="p-6">
-              <span class="tag">Eco Brand</span>
-
-              <h3 class="card-title">
-                GreenRoots Revivers
-              </h3>
-
-              <p class="card-description">
-                Nature-inspired responsive website for a tree nursery business
-                focused on eco-friendly storytelling.
-              </p>
-
-              <a href="https://green-roots-revivers.vercel.app/" class="premium-link">
-                <span>Visit Website →</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="project-card card-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="portfolio-card">
-            <div class="image-wrapper">
-              <img src="/images/NDO.png" alt="Nairobi DevOps Community Snapshot">
-            </div>
-
-            <div class="p-6">
-              <span class="tag">UI/UX Redesign</span>
-
-              <h3 class="card-title">
-                Nairobi DevOps Community
-              </h3>
-
-              <p class="card-description">
-                Modern redesign improving navigation, visual branding,
-                and community engagement.
-              </p>
-
-              <a href="#" class="premium-link">
-                <span>View Prototype →</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- HIDDEN PROJECTS -->
-        <div class="project-card hidden-card card-item">
-          <div class="portfolio-card">
-            <div class="image-wrapper">
-              <img src="/images/mekira.PNG" alt="Mikira Clothing Store Showcase">
-            </div>
-
-            <div class="p-6">
-              <span class="tag">Fashion App</span>
-
-              <h3 class="card-title">
-                Mikira Clothing Store
-              </h3>
-
-              <p class="card-description">
-                Clean and modern fashion shopping experience with intuitive navigation.
-              </p>
-
-              <a href="#" class="premium-link">
-                <span>View Design →</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card hidden-card card-item">
-          <div class="portfolio-card">
-            <div class="image-wrapper">
-              <img src="/images/summit.PNG" alt="Africa DevOps Summit Concept">
-            </div>
-
-            <div class="p-6">
-              <span class="tag">Event Experience</span>
-
-              <h3 class="card-title">
-                Africa DevOps Summit
-              </h3>
-
-              <p class="card-description">
-                Event-focused UX design with immersive layouts and branded experiences.
-              </p>
-
-              <a href="#" class="premium-link">
-                <span>View Design →</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- SHOW MORE PROJECTS BUTTON -->
-      <div class="flex justify-center mt-14">
-        <button id="toggleProjects" class="show-btn">
-          <span>Show All Projects</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- ================= CASE STUDY SECTION ================= -->
-    <div id="caseStudiesSection" class="hidden mt-16">
-      <div class="grid grid-cols-1 gap-10">
-
-        <!-- CASE STUDY 1 -->
-        <div class="case-study-card case-item" data-aos="fade-up">
-          <div class="bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700">
-            <div class="grid md:grid-cols-2 gap-0">
-              <div class="overflow-hidden">
-                <img src="/images/nexa-banner.png" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Nexa App Layout">
-              </div>
-
-              <div class="p-10 flex flex-col justify-center">
-                <span class="tag mb-4">Featured Case Study</span>
-
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-5">
-                  Nexa Banking App
-                </h2>
-
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                  A modern fintech banking experience focused on simplifying digital
-                  finance through intuitive UX, premium visuals, and frictionless interactions.
-                </p>
-
-                <div class="flex flex-wrap gap-3 mb-8">
-                  <span class="mini-tag">UX Research</span>
-                  <span class="mini-tag">Fintech</span>
-                  <span class="mini-tag">Mobile Design</span>
-                </div>
-
-                <a href="case-studies/nexa.html" class="premium-case-btn">
-                  <span>Read Full Case Study →</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- CASE STUDY 2 -->
-        <div class="case-study-card case-item" data-aos="fade-up">
-          <div class="bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700">
-            <div class="grid md:grid-cols-2 gap-0">
-              <div class="overflow-hidden">
-                <img src="/images/NDO.png" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Nairobi DevOps Overhaul">
-              </div>
-
-              <div class="p-10 flex flex-col justify-center">
-                <span class="tag mb-4">Community Platform Redesign</span>
-
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-5">
-                  Nairobi DevOps Community
-                </h2>
-
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                  Complete UX/UI redesign focused on improving navigation,
-                  strengthening community branding, and creating a more modern and engaging digital experience.
-                </p>
-
-                <div class="flex flex-wrap gap-3 mb-8">
-                  <span class="mini-tag">UX Redesign</span>
-                  <span class="mini-tag">Community Platform</span>
-                  <span class="mini-tag">Web Experience</span>
-                </div>
-
-                <a href="/case-studies/ndc.html" class="premium-case-btn">
-                  <span>Read Full Case Study →</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- CASE STUDY 3 -->
-        <div class="case-study-card case-item" data-aos="fade-up">
-          <div class="bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700">
-            <div class="grid md:grid-cols-2 gap-0">
-              <div class="overflow-hidden">
-                <img src="/images/savannah-telehealth.PNG" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Savannah Telehealth Dashboard">
-              </div>
-
-              <div class="p-10 flex flex-col justify-center">
-                <span class="tag mb-4">Healthcare UX</span>
-
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-5">
-                  Savannah Informatics
-                </h2>
-
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                  Accessibility-focused telehealth platform designed for elderly users.
-                </p>
-
-                <a href="#" class="premium-case-btn">
-                  <span>Read Case Study →</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- STYLES (Strictly Scoped to #portfolio to prevent styles leaking to the About section) -->
-<style>
-  #portfolio .active-toggle {
-    background: linear-gradient(to right, #f97316, #fb923c);
-    color: white;
-    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
-  }
-
-  #portfolio .portfolio-card {
-    @apply bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-700 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl;
-  }
-
-  #portfolio .image-wrapper {
-    @apply overflow-hidden;
-  }
-
-  #portfolio .image-wrapper img {
-    @apply w-full h-64 object-cover transition duration-700 hover:scale-110;
-  }
-
-  #portfolio .tag {
-    @apply inline-block text-sm bg-orange-100 dark:bg-orange-500/20 text-orange-500 px-4 py-1 rounded-full font-medium mb-4;
-  }
-
-  #portfolio .mini-tag {
-    @apply px-4 py-2 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200;
-  }
-
-  #portfolio .card-title {
-    @apply text-2xl font-bold text-gray-900 dark:text-white mb-4;
-  }
-
-  #portfolio .card-description {
-    @apply text-gray-600 dark:text-gray-300 leading-relaxed;
-  }
-
-  /* Inline Link Underlines */
-  #portfolio .premium-link {
-    @apply mt-7 inline-flex items-center gap-3 text-orange-500 font-semibold transition-all duration-300 relative pb-1;
-  }
-
-  #portfolio .premium-link::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #f97316;
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
-  }
-
-  #portfolio .premium-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-
-  #portfolio .premium-link span {
-    @apply transition-transform duration-300;
-  }
-
-  #portfolio .premium-link:hover span {
-    transform: translateX(6px);
-  }
-
-  /* Case Study Links */
-  #portfolio .premium-case-btn {
-    @apply relative inline-flex items-center gap-2 text-orange-500 font-bold transition-all duration-300 w-fit mt-4 pb-1;
-  }
-
-  #portfolio .premium-case-btn::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #f97316;
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
-  }
-
-  #portfolio .premium-case-btn:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-
-  #portfolio .premium-case-btn span {
-    @apply transition-transform duration-300;
-  }
-
-  #portfolio .premium-case-btn:hover span {
-    transform: translateX(5px);
-  }
-
-  /* Main Dynamic Action Button */
-  #portfolio .show-btn {
-    @apply relative overflow-hidden rounded-full border border-orange-500 bg-orange-500 px-8 py-4 font-semibold text-white shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-orange-500/30;
-  }
-
-  #portfolio .show-btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, #fb923c, #f97316);
-    transform: translateY(100%);
-    transition: 0.5s;
-  }
-
-  #portfolio .show-btn:hover::before {
-    transform: translateY(0%);
-  }
-
-  #portfolio .show-btn span {
-    position: relative;
-    z-index: 2;
-  }
-
-  #portfolio .hidden-card {
-    display: none;
-  }
-</style>
-
-<!-- SCRIPT -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const projectsBtn = document.getElementById("projectsBtn");
-    const caseStudiesBtn = document.getElementById("caseStudiesBtn");
-    const projectsSection = document.getElementById("projectsSection");
-    const caseStudiesSection = document.getElementById("caseStudiesSection");
-    const toggleProjects = document.getElementById("toggleProjects");
-
-    if (projectsBtn && caseStudiesBtn && projectsSection && caseStudiesSection) {
-      projectsBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        projectsSection.classList.remove("hidden");
-        caseStudiesSection.classList.add("hidden");
-        projectsBtn.classList.add("active-toggle");
-        caseStudiesBtn.classList.remove("active-toggle");
-      });
-
-      caseStudiesBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        caseStudiesSection.classList.remove("hidden");
-        projectsSection.classList.add("hidden");
-        caseStudiesBtn.classList.add("active-toggle");
-        projectsBtn.classList.remove("active-toggle");
-      });
-    }
-
-    if (toggleProjects) {
-      const hiddenProjects = document.querySelectorAll(".hidden-card");
-      let projectsExpanded = false;
-
-      toggleProjects.addEventListener("click", (e) => {
-        e.preventDefault();
-        projectsExpanded = !projectsExpanded;
-
-        hiddenProjects.forEach(card => {
-          card.style.display = projectsExpanded ? "block" : "none";
+    // Scoped Portfolio Tab Interactions
+    document.addEventListener("DOMContentLoaded", () => {
+      const projectsBtn = document.getElementById("projectsBtn");
+      const caseStudiesBtn = document.getElementById("caseStudiesBtn");
+      const projectsSection = document.getElementById("projectsSection");
+      const caseStudiesSection = document.getElementById("caseStudiesSection");
+      const toggleProjects = document.getElementById("toggleProjects");
+
+      if (projectsBtn && caseStudiesBtn && projectsSection && caseStudiesSection) {
+        projectsBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          projectsSection.classList.remove("hidden");
+          caseStudiesSection.classList.add("hidden");
+          projectsBtn.classList.add("active-toggle");
+          caseStudiesBtn.classList.remove("active-toggle");
         });
 
-        const btnSpan = toggleProjects.querySelector("span");
-        if (btnSpan) {
-          btnSpan.textContent = projectsExpanded ? "Show Less Projects" : "Show All Projects";
-        }
-      });
-    }
-  });
-</script>
-</body>
+        caseStudiesBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          caseStudiesSection.classList.remove("hidden");
+          projectsSection.classList.add("hidden");
+          caseStudiesBtn.classList.add("active-toggle");
+          projectsBtn.classList.remove("active-toggle");
+        });
+      }
 
+      if (toggleProjects) {
+        const hiddenProjects = document.querySelectorAll(".hidden-card");
+        let projectsExpanded = false;
+
+        toggleProjects.addEventListener("click", (e) => {
+          e.preventDefault();
+          projectsExpanded = !projectsExpanded;
+
+          hiddenProjects.forEach(card => {
+            card.style.display = projectsExpanded ? "block" : "none";
+          });
+
+          const btnSpan = toggleProjects.querySelector("span");
+          if (btnSpan) {
+            btnSpan.textContent = projectsExpanded ? "Show Less Projects" : "Show All Projects";
+          }
+        });
+      }
+    });
+  </script>
+</body>
 </html>

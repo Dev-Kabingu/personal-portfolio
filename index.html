@@ -539,7 +539,7 @@
 
   
 <!-- Portfolio & Case Study Section -->
-<section id="portfolio" class="py-24 bg-gray-50 dark:bg-[#0f172a] overflow-hidden">
+<section id="portfolio-showcase" class="py-24 bg-gray-50 dark:bg-[#0f172a] overflow-hidden">
   <div class="container mx-auto px-5">
 
     <!-- Header -->
@@ -558,10 +558,10 @@
       </p>
     </div>
 
-    <!-- Toggle Switches -->
+    <!-- Toggle -->
     <div class="flex justify-center mt-12" data-aos="zoom-in">
       <div class="bg-white dark:bg-[#1e293b] p-2 rounded-full shadow-xl flex gap-2 border border-gray-200 dark:border-gray-700">
-        
+
         <button id="projectsBtn"
           class="toggle-btn active-toggle px-7 py-3 rounded-full font-medium transition-all duration-300">
           Projects
@@ -575,425 +575,192 @@
       </div>
     </div>
 
-    <!-- ================= PROJECTS SECTION ================= -->
-    <div id="projectsSection" class="mt-16 transition-all duration-500">
+    <!-- PROJECTS -->
+    <div id="projectsSection" class="mt-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card -->
+        <div class="portfolio-card" data-aos="fade-up">
+          <div class="overflow-hidden rounded-t-3xl">
+            <img src="/images/glen.PNG"
+              class="w-full h-64 object-cover hover:scale-110 transition duration-700">
+          </div>
 
-        <!-- CARD 1 -->
-        <div class="project-card card-item" data-aos="fade-up">
-          <div class="portfolio-card">
-            <div class="image-wrapper">
-              <img src="/images/glen.PNG" alt="Affordable Glen Boutique Snapshot">
-            </div>
+          <div class="p-6">
+            <span class="tag">MERN Stack</span>
 
-            <div class="p-6">
-              <span class="tag">MERN Stack</span>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-4">
+              Affordable Glen Boutique
+            </h3>
 
-              <h3 class="card-title">
-                Affordable Glen Boutique
-              </h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-4">
+              Responsive shopping experience with dynamic product listings,
+              real-time updates and clean brand-focused UI.
+            </p>
 
-              <p class="card-description">
-                Responsive shopping experience with dynamic product listings,
-                real-time updates and clean brand-focused UI.
-              </p>
-
-              <a href="#" class="premium-link">
-                <span>View Project →</span>
-              </a>
-            </div>
+            <a href="#"
+              class="inline-block mt-6 text-orange-500 font-semibold hover:translate-x-1 transition">
+              View Project →
+            </a>
           </div>
         </div>
 
-        <!-- CARD 2 -->
-        <div class="project-card card-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-card">
-            <div class="image-wrapper">
-              <img src="/images/greenroots.PNG" alt="GreenRoots Revivers Snapshot">
-            </div>
+        <!-- Card -->
+        <div class="portfolio-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="overflow-hidden rounded-t-3xl">
+            <img src="/images/greenroots.PNG"
+              class="w-full h-64 object-cover hover:scale-110 transition duration-700">
+          </div>
 
-            <div class="p-6">
-              <span class="tag">Eco Brand</span>
+          <div class="p-6">
+            <span class="tag">Eco Brand</span>
 
-              <h3 class="card-title">
-                GreenRoots Revivers
-              </h3>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-4">
+              GreenRoots Revivers
+            </h3>
 
-              <p class="card-description">
-                Nature-inspired responsive website for a tree nursery business
-                focused on eco-friendly storytelling.
-              </p>
+            <p class="text-gray-600 dark:text-gray-300 mt-4">
+              Nature-inspired responsive website for a tree nursery business.
+            </p>
 
-              <a href="https://green-roots-revivers.vercel.app/" class="premium-link">
-                <span>Visit Website →</span>
-              </a>
-            </div>
+            <a href="https://green-roots-revivers.vercel.app/"
+              class="inline-block mt-6 text-orange-500 font-semibold hover:translate-x-1 transition">
+              Visit Website →
+            </a>
           </div>
         </div>
 
-        <!-- CARD 3 -->
-        <div class="project-card card-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="portfolio-card">
-            <div class="image-wrapper">
-              <img src="/images/NDO.png" alt="Nairobi DevOps Community Snapshot">
-            </div>
-
-            <div class="p-6">
-              <span class="tag">UI/UX Redesign</span>
-
-              <h3 class="card-title">
-                Nairobi DevOps Community
-              </h3>
-
-              <p class="card-description">
-                Modern redesign improving navigation, visual branding,
-                and community engagement.
-              </p>
-
-              <a href="#" class="premium-link">
-                <span>View Prototype →</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- HIDDEN PROJECTS -->
-        <div class="project-card hidden-card card-item">
-          <div class="portfolio-card">
-            <div class="image-wrapper">
-              <img src="/images/mekira.PNG" alt="Mikira Clothing Store Showcase">
-            </div>
-
-            <div class="p-6">
-              <span class="tag">Fashion App</span>
-
-              <h3 class="card-title">
-                Mikira Clothing Store
-              </h3>
-
-              <p class="card-description">
-                Clean and modern fashion shopping experience with intuitive navigation.
-              </p>
-
-              <a href="#" class="premium-link">
-                <span>View Design →</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card hidden-card card-item">
-          <div class="portfolio-card">
-            <div class="image-wrapper">
-              <img src="/images/summit.PNG" alt="Africa DevOps Summit Concept">
-            </div>
-
-            <div class="p-6">
-              <span class="tag">Event Experience</span>
-
-              <h3 class="card-title">
-                Africa DevOps Summit
-              </h3>
-
-              <p class="card-description">
-                Event-focused UX design with immersive layouts and branded experiences.
-              </p>
-
-              <a href="#" class="premium-link">
-                <span>View Design →</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- SHOW MORE PROJECTS BUTTON -->
-      <div class="flex justify-center mt-14">
-        <button id="toggleProjects" class="show-btn">
-          <span>Show All Projects</span>
-        </button>
       </div>
     </div>
 
-    <!-- ================= CASE STUDY SECTION ================= -->
+    <!-- CASE STUDIES -->
     <div id="caseStudiesSection" class="hidden mt-16">
-      <div class="grid grid-cols-1 gap-10">
 
-        <!-- CASE STUDY 1 -->
-        <div class="case-study-card case-item" data-aos="fade-up">
-          <div class="bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700">
-            <div class="grid md:grid-cols-2 gap-0">
-              <div class="overflow-hidden">
-                <img src="/images/nexa-banner.png" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Nexa App Layout">
-              </div>
+      <!-- CASE STUDY -->
+      <div class="bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700"
+        data-aos="fade-up">
 
-              <div class="p-10 flex flex-col justify-center">
-                <span class="tag mb-4">Featured Case Study</span>
+        <div class="grid md:grid-cols-2">
 
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-5">
-                  Nexa Banking App
-                </h2>
+          <div class="overflow-hidden">
+            <img src="/images/nexa-banner.png"
+              class="w-full h-full object-cover hover:scale-105 transition duration-700">
+          </div>
 
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                  A modern fintech banking experience focused on simplifying digital
-                  finance through intuitive UX, premium visuals, and frictionless interactions.
-                </p>
+          <div class="p-10 flex flex-col justify-center">
+            <span class="tag mb-4">Featured Case Study</span>
 
-                <div class="flex flex-wrap gap-3 mb-8">
-                  <span class="mini-tag">UX Research</span>
-                  <span class="mini-tag">Fintech</span>
-                  <span class="mini-tag">Mobile Design</span>
-                </div>
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-5">
+              Nexa Banking App
+            </h2>
 
-                <a href="case-studies/nexa.html" class="premium-case-btn">
-                  <span>Read Full Case Study →</span>
-                </a>
-              </div>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+              A modern fintech banking experience focused on simplifying digital
+              finance through intuitive UX and frictionless interactions.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="mini-tag">UX Research</span>
+              <span class="mini-tag">Fintech</span>
+              <span class="mini-tag">Mobile Design</span>
             </div>
+
+            <!-- FIXED LINK -->
+            <a href="./case-studies/nexa.html"
+              class="inline-block text-orange-500 font-bold hover:translate-x-1 transition">
+              Read Full Case Study →
+            </a>
+
           </div>
         </div>
-        
-        <!-- CASE STUDY 2 -->
-        <div class="case-study-card case-item" data-aos="fade-up">
-          <div class="bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700">
-            <div class="grid md:grid-cols-2 gap-0">
-              <div class="overflow-hidden">
-                <img src="/images/NDO.png" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Nairobi DevOps Overhaul">
-              </div>
-
-              <div class="p-10 flex flex-col justify-center">
-                <span class="tag mb-4">Community Platform Redesign</span>
-
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-5">
-                  Nairobi DevOps Community
-                </h2>
-
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                  Complete UX/UI redesign focused on improving navigation,
-                  strengthening community branding, and creating a more modern and engaging digital experience.
-                </p>
-
-                <div class="flex flex-wrap gap-3 mb-8">
-                  <span class="mini-tag">UX Redesign</span>
-                  <span class="mini-tag">Community Platform</span>
-                  <span class="mini-tag">Web Experience</span>
-                </div>
-
-                <a href="/case-studies/ndc.html" class="premium-case-btn">
-                  <span>Read Full Case Study →</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- CASE STUDY 3 -->
-        <div class="case-study-card case-item" data-aos="fade-up">
-          <div class="bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700">
-            <div class="grid md:grid-cols-2 gap-0">
-              <div class="overflow-hidden">
-                <img src="/images/savannah-telehealth.PNG" class="w-full h-full object-cover hover:scale-105 transition duration-700" alt="Savannah Telehealth Dashboard">
-              </div>
-
-              <div class="p-10 flex flex-col justify-center">
-                <span class="tag mb-4">Healthcare UX</span>
-
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-5">
-                  Savannah Informatics
-                </h2>
-
-                <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                  Accessibility-focused telehealth platform designed for elderly users.
-                </p>
-
-                <a href="#" class="premium-case-btn">
-                  <span>Read Case Study →</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
+
     </div>
 
   </div>
 </section>
 
-<!-- STYLES (Strictly Scoped to #portfolio to prevent styles leaking to the About section) -->
+<!-- FIXED CSS -->
 <style>
-  #portfolio .active-toggle {
-    background: linear-gradient(to right, #f97316, #fb923c);
-    color: white;
-    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
-  }
 
-  #portfolio .portfolio-card {
-    @apply bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-700 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl;
-  }
+.active-toggle{
+  background: linear-gradient(to right, #f97316, #fb923c);
+  color:white;
+}
 
-  #portfolio .image-wrapper {
-    @apply overflow-hidden;
-  }
+.portfolio-card{
+  background:white;
+  border-radius:1.5rem;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:0.4s;
+}
 
-  #portfolio .image-wrapper img {
-    @apply w-full h-64 object-cover transition duration-700 hover:scale-110;
-  }
+.dark .portfolio-card{
+  background:#1e293b;
+}
 
-  #portfolio .tag {
-    @apply inline-block text-sm bg-orange-100 dark:bg-orange-500/20 text-orange-500 px-4 py-1 rounded-full font-medium mb-4;
-  }
+.portfolio-card:hover{
+  transform:translateY(-10px);
+}
 
-  #portfolio .mini-tag {
-    @apply px-4 py-2 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200;
-  }
+.tag{
+  display:inline-block;
+  background:#ffedd5;
+  color:#f97316;
+  padding:6px 14px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:600;
+}
 
-  #portfolio .card-title {
-    @apply text-2xl font-bold text-gray-900 dark:text-white mb-4;
-  }
+.mini-tag{
+  background:#f3f4f6;
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:14px;
+}
 
-  #portfolio .card-description {
-    @apply text-gray-600 dark:text-gray-300 leading-relaxed;
-  }
+.dark .mini-tag{
+  background:#374151;
+  color:white;
+}
 
-  /* Inline Link Underlines */
-  #portfolio .premium-link {
-    @apply mt-7 inline-flex items-center gap-3 text-orange-500 font-semibold transition-all duration-300 relative pb-1;
-  }
-
-  #portfolio .premium-link::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #f97316;
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
-  }
-
-  #portfolio .premium-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-
-  #portfolio .premium-link span {
-    @apply transition-transform duration-300;
-  }
-
-  #portfolio .premium-link:hover span {
-    transform: translateX(6px);
-  }
-
-  /* Case Study Links */
-  #portfolio .premium-case-btn {
-    @apply relative inline-flex items-center gap-2 text-orange-500 font-bold transition-all duration-300 w-fit mt-4 pb-1;
-  }
-
-  #portfolio .premium-case-btn::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #f97316;
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
-  }
-
-  #portfolio .premium-case-btn:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-
-  #portfolio .premium-case-btn span {
-    @apply transition-transform duration-300;
-  }
-
-  #portfolio .premium-case-btn:hover span {
-    transform: translateX(5px);
-  }
-
-  /* Main Dynamic Action Button */
-  #portfolio .show-btn {
-    @apply relative overflow-hidden rounded-full border border-orange-500 bg-orange-500 px-8 py-4 font-semibold text-white shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-orange-500/30;
-  }
-
-  #portfolio .show-btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, #fb923c, #f97316);
-    transform: translateY(100%);
-    transition: 0.5s;
-  }
-
-  #portfolio .show-btn:hover::before {
-    transform: translateY(0%);
-  }
-
-  #portfolio .show-btn span {
-    position: relative;
-    z-index: 2;
-  }
-
-  #portfolio .hidden-card {
-    display: none;
-  }
 </style>
 
-<!-- SCRIPT -->
+<!-- FIXED SCRIPT -->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const projectsBtn = document.getElementById("projectsBtn");
-    const caseStudiesBtn = document.getElementById("caseStudiesBtn");
-    const projectsSection = document.getElementById("projectsSection");
-    const caseStudiesSection = document.getElementById("caseStudiesSection");
-    const toggleProjects = document.getElementById("toggleProjects");
 
-    if (projectsBtn && caseStudiesBtn && projectsSection && caseStudiesSection) {
-      projectsBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        projectsSection.classList.remove("hidden");
-        caseStudiesSection.classList.add("hidden");
-        projectsBtn.classList.add("active-toggle");
-        caseStudiesBtn.classList.remove("active-toggle");
-      });
+document.addEventListener("DOMContentLoaded", () => {
 
-      caseStudiesBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        caseStudiesSection.classList.remove("hidden");
-        projectsSection.classList.add("hidden");
-        caseStudiesBtn.classList.add("active-toggle");
-        projectsBtn.classList.remove("active-toggle");
-      });
-    }
+  const projectsBtn = document.getElementById("projectsBtn");
+  const caseStudiesBtn = document.getElementById("caseStudiesBtn");
 
-    if (toggleProjects) {
-      const hiddenProjects = document.querySelectorAll(".hidden-card");
-      let projectsExpanded = false;
+  const projectsSection = document.getElementById("projectsSection");
+  const caseStudiesSection = document.getElementById("caseStudiesSection");
 
-      toggleProjects.addEventListener("click", (e) => {
-        e.preventDefault();
-        projectsExpanded = !projectsExpanded;
+  projectsBtn.addEventListener("click", () => {
 
-        hiddenProjects.forEach(card => {
-          card.style.display = projectsExpanded ? "block" : "none";
-        });
+    projectsSection.classList.remove("hidden");
+    caseStudiesSection.classList.add("hidden");
 
-        const btnSpan = toggleProjects.querySelector("span");
-        if (btnSpan) {
-          btnSpan.textContent = projectsExpanded ? "Show Less Projects" : "Show All Projects";
-        }
-      });
-    }
+    projectsBtn.classList.add("active-toggle");
+    caseStudiesBtn.classList.remove("active-toggle");
+
   });
+
+  caseStudiesBtn.addEventListener("click", () => {
+
+    caseStudiesSection.classList.remove("hidden");
+    projectsSection.classList.add("hidden");
+
+    caseStudiesBtn.classList.add("active-toggle");
+    projectsBtn.classList.remove("active-toggle");
+
+  });
+
+});
+
 </script>
 </body>
 

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Nexa Banking App — Case Study</title>
+  <title>Nexa Banking App — UX Case Study</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -14,73 +14,187 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
-
-    body{
+    body {
       font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      overflow-x: hidden;
     }
 
-    .glass-card{
+    /* SOFT BACKGROUND */
+    .soft-bg {
+      background:
+        radial-gradient(circle at top left, rgba(249, 115, 22, 0.08), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(251, 146, 60, 0.08), transparent 30%),
+        #ffffff;
+    }
+
+    /* GLASS */
+    .glass-card {
       backdrop-filter: blur(14px);
-      background: rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .section-title{
-      @apply text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight;
+    /* TITLES */
+    .section-title {
+      font-size: clamp(2.3rem, 4vw, 4rem);
+      line-height: 1.1;
+      font-weight: 800;
+      color: #111827;
     }
 
-    .section-paragraph{
-      @apply mt-8 text-lg leading-relaxed text-gray-600 dark:text-gray-300;
+    .dark .section-title {
+      color: white;
     }
 
-    .tag{
-      @apply inline-flex items-center rounded-full bg-orange-500/10 px-5 py-2 text-sm font-semibold text-orange-500;
+    .section-paragraph {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: #6b7280;
     }
 
-    .overview-card{
-      @apply rounded-3xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-[#1e293b] p-7 shadow-xl transition-all duration-500 hover:-translate-y-2;
+    .dark .section-paragraph {
+      color: #d1d5db;
     }
 
-    .process-card{
-      @apply rounded-3xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-[#1e293b] p-8 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl;
+    /* TAGS */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      background: rgba(249, 115, 22, 0.12);
+      color: #f97316;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
     }
 
-    .research-card{
-      @apply rounded-3xl bg-gray-50 dark:bg-[#1e293b] p-6 border border-gray-100 dark:border-gray-700;
+    /* CARDS */
+    .overview-card,
+    .process-card,
+    .feature-card,
+    .research-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2rem;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow:
+        0 10px 40px rgba(15, 23, 42, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(14px);
+      transition: all 0.45s ease;
     }
 
-    .feature-card{
-      @apply rounded-3xl overflow-hidden bg-white dark:bg-[#1e293b] border border-gray-100 dark:border-gray-700 shadow-xl transition duration-500 hover:-translate-y-2;
+    .dark .overview-card,
+    .dark .process-card,
+    .dark .feature-card,
+    .dark .research-card {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .feature-card img{
-      @apply transition duration-700 hover:scale-105;
+    .overview-card:hover,
+    .process-card:hover,
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow:
+        0 20px 60px rgba(249, 115, 22, 0.15);
     }
 
+    /* IMAGE HOVER */
+    .feature-card img {
+      transition: 0.7s ease;
+    }
+
+    .feature-card:hover img {
+      transform: scale(1.05);
+    }
+
+    /* HERO OVERLAY */
+    .hero-overlay {
+      background:
+        linear-gradient(to bottom,
+          rgba(0, 0, 0, 0.88),
+          rgba(0, 0, 0, 0.82),
+          rgba(15, 23, 42, 0.96));
+    }
+
+    /* GLOW */
+    .glow {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 999px;
+      background: rgba(249, 115, 22, 0.12);
+      filter: blur(120px);
+      z-index: 0;
+    }
+
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .gradient-border {
+      position: relative;
+    }
+
+    .gradient-border::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 1px;
+      border-radius: inherit;
+      background: linear-gradient(to right, rgba(249, 115, 22, 0.3), rgba(251, 146, 60, 0.1));
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
   </style>
 </head>
 
-<body class="bg-white dark:bg-[#0f172a] text-gray-900 dark:text-white overflow-x-hidden">
+<body class="soft-bg text-gray-900 dark:bg-[#0f172a] dark:text-white">
 
   <!-- ================= HERO ================= -->
 
-  <section class="relative h-screen overflow-hidden">
+  <section class="relative min-h-screen overflow-hidden flex items-center">
 
     <!-- Background -->
     <img src="../images/nexa-banner.png"
       class="absolute inset-0 w-full h-full object-cover">
 
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-[#0f172a]"></div>
+    <!-- DARK OVERLAY -->
+    <div class="absolute inset-0 hero-overlay"></div>
+
+    <!-- Glow -->
+    <div class="glow top-[-150px] left-[-100px]"></div>
 
     <!-- Content -->
-    <div class="relative z-10 container mx-auto px-5 h-full flex items-center">
+    <div class="relative z-10 container mx-auto px-5 py-32">
 
-      <div class="max-w-3xl">
+      <div class="max-w-4xl">
 
         <!-- Back -->
         <a href="../index.html"
-          class="inline-flex items-center gap-3 text-orange-400 font-semibold mb-10 hover:gap-4 transition-all duration-300">
+          class="inline-flex items-center gap-3 text-orange-400 font-semibold mb-10 hover:gap-5 transition-all duration-300">
 
           ← Back to Portfolio
         </a>
@@ -89,21 +203,22 @@
           Fintech UX Case Study
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-bold leading-tight text-white mb-8"
+        <h1 class="text-5xl md:text-7xl font-black leading-tight text-white mb-8"
           data-aos="fade-up">
 
           Nexa Banking App
         </h1>
 
-        <p class="text-xl text-gray-200 leading-relaxed max-w-2xl"
+        <p class="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-3xl"
           data-aos="fade-up"
           data-aos-delay="200">
 
           Designing a modern mobile banking experience focused on simplicity,
-          trust, accessibility, and frictionless digital finance for mobile-first users.
+          accessibility, trust, and frictionless digital finance for mobile-first users.
         </p>
 
-        <div class="flex flex-wrap gap-4 mt-10"
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-4 mt-12"
           data-aos="fade-up"
           data-aos-delay="300">
 
@@ -116,11 +231,11 @@
           </span>
 
           <span class="glass-card px-6 py-3 rounded-full text-white">
-            UI Design
+            Mobile UI
           </span>
 
           <span class="glass-card px-6 py-3 rounded-full text-white">
-            Mobile App
+            Product Design
           </span>
 
         </div>
@@ -133,14 +248,13 @@
 
   <!-- ================= OVERVIEW ================= -->
 
-  <section class="py-24">
+  <section class="py-28 relative">
 
     <div class="container mx-auto px-5">
 
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-        <div class="overview-card" data-aos="fade-up">
-
+        <div class="overview-card gradient-border p-8" data-aos="fade-up">
           <p class="text-orange-500 uppercase tracking-widest text-sm mb-3">
             Role
           </p>
@@ -148,11 +262,9 @@
           <h3 class="text-2xl font-bold">
             UI/UX Designer
           </h3>
-
         </div>
 
-        <div class="overview-card" data-aos="fade-up" data-aos-delay="100">
-
+        <div class="overview-card gradient-border p-8" data-aos="fade-up" data-aos-delay="100">
           <p class="text-orange-500 uppercase tracking-widest text-sm mb-3">
             Timeline
           </p>
@@ -160,11 +272,9 @@
           <h3 class="text-2xl font-bold">
             4 Weeks
           </h3>
-
         </div>
 
-        <div class="overview-card" data-aos="fade-up" data-aos-delay="200">
-
+        <div class="overview-card gradient-border p-8" data-aos="fade-up" data-aos-delay="200">
           <p class="text-orange-500 uppercase tracking-widest text-sm mb-3">
             Tools
           </p>
@@ -172,11 +282,9 @@
           <h3 class="text-2xl font-bold">
             Figma
           </h3>
-
         </div>
 
-        <div class="overview-card" data-aos="fade-up" data-aos-delay="300">
-
+        <div class="overview-card gradient-border p-8" data-aos="fade-up" data-aos-delay="300">
           <p class="text-orange-500 uppercase tracking-widest text-sm mb-3">
             Platform
           </p>
@@ -184,7 +292,6 @@
           <h3 class="text-2xl font-bold">
             Mobile Banking
           </h3>
-
         </div>
 
       </div>
@@ -196,7 +303,7 @@
 
   <!-- ================= PROBLEM ================= -->
 
-  <section class="pb-28">
+  <section class="pb-32 relative">
 
     <div class="container mx-auto px-5">
 
@@ -210,7 +317,7 @@
           data-aos="fade-up">
 
           Traditional banking apps feel cluttered,
-          outdated and overwhelming.
+          outdated, and overwhelming.
         </h2>
 
         <p class="section-paragraph"
@@ -235,13 +342,13 @@
 
   <!-- ================= RESEARCH ================= -->
 
-  <section class="pb-28">
+  <section class="pb-32">
 
     <div class="container mx-auto px-5">
 
       <div class="grid md:grid-cols-2 gap-16 items-center">
 
-        <!-- Left -->
+        <!-- LEFT -->
         <div>
 
           <span class="tag">
@@ -261,19 +368,19 @@
 
           <div class="space-y-5 mt-10">
 
-            <div class="research-card">
+            <div class="research-card p-6">
               Confusing dashboard hierarchy
             </div>
 
-            <div class="research-card">
+            <div class="research-card p-6">
               Too many steps for transfers
             </div>
 
-            <div class="research-card">
+            <div class="research-card p-6">
               Lack of spending insights
             </div>
 
-            <div class="research-card">
+            <div class="research-card p-6">
               Weak visual hierarchy
             </div>
 
@@ -281,8 +388,8 @@
 
         </div>
 
-        <!-- Right -->
-        <div data-aos="zoom-in">
+        <!-- RIGHT -->
+        <div data-aos="zoom-in" class="floating">
 
           <img src="../images/nexa-research.png"
             class="rounded-[2rem] shadow-2xl">
@@ -298,11 +405,11 @@
 
   <!-- ================= DESIGN PROCESS ================= -->
 
-  <section class="pb-28">
+  <section class="pb-32">
 
     <div class="container mx-auto px-5">
 
-      <div class="max-w-4xl mb-16">
+      <div class="max-w-4xl mb-20">
 
         <span class="tag">
           Design Process
@@ -317,9 +424,9 @@
 
       <div class="grid md:grid-cols-3 gap-8">
 
-        <div class="process-card" data-aos="fade-up">
+        <div class="process-card p-8" data-aos="fade-up">
 
-          <div class="text-orange-500 text-5xl font-bold mb-8">
+          <div class="text-orange-500 text-6xl font-black mb-8">
             01
           </div>
 
@@ -334,11 +441,11 @@
 
         </div>
 
-        <div class="process-card"
+        <div class="process-card p-8"
           data-aos="fade-up"
           data-aos-delay="100">
 
-          <div class="text-orange-500 text-5xl font-bold mb-8">
+          <div class="text-orange-500 text-6xl font-black mb-8">
             02
           </div>
 
@@ -353,11 +460,11 @@
 
         </div>
 
-        <div class="process-card"
+        <div class="process-card p-8"
           data-aos="fade-up"
           data-aos-delay="200">
 
-          <div class="text-orange-500 text-5xl font-bold mb-8">
+          <div class="text-orange-500 text-6xl font-black mb-8">
             03
           </div>
 
@@ -385,7 +492,7 @@
 
     <div class="container mx-auto px-5">
 
-      <div class="max-w-5xl mb-16">
+      <div class="max-w-5xl mb-20">
 
         <span class="tag">
           Final Solution
@@ -400,11 +507,15 @@
 
       <div class="grid md:grid-cols-2 gap-10">
 
-        <div class="feature-card">
+        <!-- CARD -->
+        <div class="feature-card"
+          data-aos="fade-up">
 
           <div class="overflow-hidden">
+
             <img src="../images/nexa-dashboard.png"
               class="w-full h-full object-cover">
+
           </div>
 
           <div class="p-8">
@@ -422,11 +533,16 @@
 
         </div>
 
-        <div class="feature-card">
+        <!-- CARD -->
+        <div class="feature-card"
+          data-aos="fade-up"
+          data-aos-delay="100">
 
           <div class="overflow-hidden">
+
             <img src="../images/nexa-transfer.png"
               class="w-full h-full object-cover">
+
           </div>
 
           <div class="p-8">
@@ -484,29 +600,39 @@
   </section>
 
 
-  <!-- ================= FOOTER CTA ================= -->
+  <!-- ================= CTA ================= -->
 
   <section class="pb-32">
 
     <div class="container mx-auto px-5">
 
       <div
-        class="rounded-[2rem] bg-gradient-to-r from-orange-500 to-orange-600 p-14 text-center shadow-2xl">
+        class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-orange-500 to-orange-600 p-14 text-center shadow-2xl">
 
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">
-          Want to see more projects?
-        </h2>
+        <!-- Glow -->
+        <div class="absolute top-[-100px] right-[-100px] w-[300px] h-[300px] rounded-full bg-white/10 blur-3xl"></div>
 
-        <p class="text-orange-100 text-lg max-w-2xl mx-auto mb-10">
-          Explore more UX/UI projects, product experiences and digital design work.
-        </p>
+        <div class="relative z-10">
 
-        <a href="../index.html#portfolio"
-          class="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 font-semibold text-orange-500 transition duration-300 hover:scale-105">
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-8">
 
-          Back to Portfolio →
+            Want to see more projects?
+          </h2>
 
-        </a>
+          <p class="text-orange-100 text-lg max-w-2xl mx-auto mb-10">
+
+            Explore more UX/UI projects,
+            product experiences and digital design work from my portfolio.
+          </p>
+
+          <a href="../index.html#portfolio"
+            class="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 font-semibold text-orange-500 transition duration-300 hover:scale-105">
+
+            Back to Portfolio →
+
+          </a>
+
+        </div>
 
       </div>
 

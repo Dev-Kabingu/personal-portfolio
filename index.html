@@ -537,8 +537,7 @@
     });
   </script>
 
-  
-<!-- Portfolio & Case Study Section -->
+  <!-- Portfolio & Case Study Section -->
 <section id="portfolio-showcase" class="py-24 bg-gray-50 dark:bg-[#0f172a] overflow-hidden">
   <div class="container mx-auto px-5">
 
@@ -552,7 +551,8 @@
         Selected Projects & <span class="text-orange-500">Case Studies</span>
       </h2>
 
-      <p class="mt-5 text-gray-600 dark:text-gray-300 text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+      <p class="mt-5 text-gray-600 dark:text-gray-300 text-lg leading-relaxed"
+        data-aos="fade-up" data-aos-delay="200">
         A collection of UI/UX design projects and product experiences focused on creating intuitive,
         accessible, and visually engaging digital products.
       </p>
@@ -560,7 +560,8 @@
 
     <!-- Toggle -->
     <div class="flex justify-center mt-12" data-aos="zoom-in">
-      <div class="bg-white dark:bg-[#1e293b] p-2 rounded-full shadow-xl flex gap-2 border border-gray-200 dark:border-gray-700">
+      <div
+        class="bg-white dark:bg-[#1e293b] p-2 rounded-full shadow-xl flex gap-2 border border-gray-200 dark:border-gray-700">
 
         <button id="projectsBtn"
           class="toggle-btn active-toggle px-7 py-3 rounded-full font-medium transition-all duration-300">
@@ -575,11 +576,12 @@
       </div>
     </div>
 
-    <!-- PROJECTS -->
+    <!-- ================= PROJECTS ================= -->
     <div id="projectsSection" class="mt-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <!-- Card -->
+      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- PROJECT 1 -->
         <div class="portfolio-card" data-aos="fade-up">
           <div class="overflow-hidden rounded-t-3xl">
             <img src="/images/glen.PNG"
@@ -605,7 +607,7 @@
           </div>
         </div>
 
-        <!-- Card -->
+        <!-- PROJECT 2 -->
         <div class="portfolio-card" data-aos="fade-up" data-aos-delay="100">
           <div class="overflow-hidden rounded-t-3xl">
             <img src="/images/greenroots.PNG"
@@ -630,33 +632,120 @@
           </div>
         </div>
 
+        <!-- PROJECT 3 -->
+        <div class="portfolio-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="overflow-hidden rounded-t-3xl">
+            <img src="/images/NDO.png"
+              class="w-full h-64 object-cover hover:scale-110 transition duration-700">
+          </div>
+
+          <div class="p-6">
+            <span class="tag">Community Design</span>
+
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-4">
+              Nairobi DevOps Community
+            </h3>
+
+            <p class="text-gray-600 dark:text-gray-300 mt-4">
+              Complete UI/UX redesign focused on improving community engagement,
+              navigation, and modern visual identity.
+            </p>
+
+            <a href="https://www.figma.com/proto/bfjQYIxlaASXkyLYQXhVMh/NDC-Redesign--Copy-?node-id=5252-5806&t=xM5xUPaXGRooUDnI-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3222%3A526"
+              class="inline-block mt-6 text-orange-500 font-semibold hover:translate-x-1 transition">
+              View Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- HIDDEN PROJECTS -->
+
+        <!-- PROJECT 4 -->
+        <div class="portfolio-card hidden extra-project" data-aos="fade-up">
+          <div class="overflow-hidden rounded-t-3xl">
+            <img src="/images/mekira.PNG"
+              class="w-full h-64 object-cover hover:scale-110 transition duration-700">
+          </div>
+
+          <div class="p-6">
+            <span class="tag">Fashion App</span>
+
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-4">
+              Mikira Clothing Store
+            </h3>
+
+            <p class="text-gray-600 dark:text-gray-300 mt-4">
+              Modern mobile shopping experience with clean layouts and engaging product displays.
+            </p>
+
+            <a href="https://www.figma.com/proto/hs1AWT3Mei1ri9Sz37Aocv/MEKIRA?node-id=35-76&t=PWePXwCVJ2jW7XZy-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=74%3A2087&show-proto-sidebar=1"
+              class="inline-block mt-6 text-orange-500 font-semibold hover:translate-x-1 transition">
+              View Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 5 -->
+        <div class="portfolio-card hidden extra-project" data-aos="fade-up">
+          <div class="overflow-hidden rounded-t-3xl">
+            <img src="/images/homerental.PNG"
+              class="w-full h-64 object-cover hover:scale-110 transition duration-700">
+          </div>
+
+          <div class="p-6">
+            <span class="tag">Mobile UI</span>
+
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-4">
+              Dream Home UI
+            </h3>
+
+            <p class="text-gray-600 dark:text-gray-300 mt-4">
+              Minimal rental house browsing experience focused on simplicity and usability.
+            </p>
+
+            <a href="https://www.figma.com/proto/xmUZ0z5eQkzyyPls2bnyhA/mobile-app-for-rental-houses?node-id=15-7&p=f&t=DAvcVgUPNoGbNbMn-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=15%3A22"
+              class="inline-block mt-6 text-orange-500 font-semibold hover:translate-x-1 transition">
+              View Project →
+            </a>
+          </div>
+        </div>
+
       </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-12">
+        <button id="toggleProjects"
+          class="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold transition">
+          View All Projects
+        </button>
+      </div>
+
     </div>
 
-    <!-- CASE STUDIES -->
+    <!-- ================= CASE STUDIES ================= -->
     <div id="caseStudiesSection" class="hidden mt-16">
 
-      <!-- CASE STUDY -->
-      <div class="bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700"
-        data-aos="fade-up">
+      <div id="caseStudiesGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-        <div class="grid md:grid-cols-2">
+        <!-- CASE STUDY 1 -->
+        <div
+          class="case-study-card bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700"
+          data-aos="fade-up">
 
           <div class="overflow-hidden">
             <img src="/images/nexa-banner.png"
-              class="w-full h-full object-cover hover:scale-105 transition duration-700">
+              class="w-full h-72 object-cover hover:scale-105 transition duration-700">
           </div>
 
-          <div class="p-10 flex flex-col justify-center">
-            <span class="tag mb-4">Featured Case Study</span>
+          <div class="p-8">
+            <span class="tag mb-4 inline-block">Fintech UX</span>
 
             <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-5">
               Nexa Banking App
             </h2>
 
             <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-              A modern fintech banking experience focused on simplifying digital
-              finance through intuitive UX and frictionless interactions.
+              Modern banking experience focused on simplifying digital finance through intuitive UX.
             </p>
 
             <div class="flex flex-wrap gap-3 mb-8">
@@ -665,14 +754,90 @@
               <span class="mini-tag">Mobile Design</span>
             </div>
 
-            <!-- FIXED LINK -->
             <a href="./case-studies/nexa.html"
               class="inline-block text-orange-500 font-bold hover:translate-x-1 transition">
               Read Full Case Study →
             </a>
-
           </div>
         </div>
+
+        <!-- CASE STUDY 2 -->
+        <div
+          class="case-study-card bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700"
+          data-aos="fade-up" data-aos-delay="100">
+
+          <div class="overflow-hidden">
+            <img src="/images/NDO.png"
+              class="w-full h-72 object-cover hover:scale-105 transition duration-700">
+          </div>
+
+          <div class="p-8">
+            <span class="tag mb-4 inline-block">Community Platform</span>
+
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-5">
+              Nairobi DevOps Community
+            </h2>
+
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+              Complete redesign improving navigation, accessibility, visual hierarchy,
+              and community engagement.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="mini-tag">UI/UX</span>
+              <span class="mini-tag">Design System</span>
+              <span class="mini-tag">Community</span>
+            </div>
+
+            <a href="./case-studies/ndc.html"
+              class="inline-block text-orange-500 font-bold hover:translate-x-1 transition">
+              Read Full Case Study →
+            </a>
+          </div>
+        </div>
+
+        <!-- CASE STUDY 3 -->
+        <div
+          class="case-study-card bg-white dark:bg-[#1e293b] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700 hidden extra-case-study"
+          data-aos="fade-up">
+
+          <div class="overflow-hidden">
+            <img src="/images/savannah-telehealth.PNG"
+              class="w-full h-72 object-cover hover:scale-105 transition duration-700">
+          </div>
+
+          <div class="p-8">
+            <span class="tag mb-4 inline-block">Healthcare UX</span>
+
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-5">
+              Savannah Telehealth
+            </h2>
+
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+              Accessibility-focused telehealth experience designed specifically for elderly users.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mb-8">
+              <span class="mini-tag">Accessibility</span>
+              <span class="mini-tag">Healthcare</span>
+              <span class="mini-tag">UX Research</span>
+            </div>
+
+            <a href="#"
+              class="inline-block text-orange-500 font-bold hover:translate-x-1 transition">
+              Read Full Case Study →
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-12">
+        <button id="toggleCaseStudies"
+          class="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold transition">
+          View All Case Studies
+        </button>
       </div>
 
     </div>
@@ -680,7 +845,7 @@
   </div>
 </section>
 
-<!-- FIXED CSS -->
+<!-- CSS -->
 <style>
 
 .active-toggle{
@@ -688,7 +853,8 @@
   color:white;
 }
 
-.portfolio-card{
+.portfolio-card,
+.case-study-card{
   background:white;
   border-radius:1.5rem;
   overflow:hidden;
@@ -696,11 +862,13 @@
   transition:0.4s;
 }
 
-.dark .portfolio-card{
+.dark .portfolio-card,
+.dark .case-study-card{
   background:#1e293b;
 }
 
-.portfolio-card:hover{
+.portfolio-card:hover,
+.case-study-card:hover{
   transform:translateY(-10px);
 }
 
@@ -728,7 +896,7 @@
 
 </style>
 
-<!-- FIXED SCRIPT -->
+<!-- SCRIPT -->
 <script>
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -739,6 +907,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectsSection = document.getElementById("projectsSection");
   const caseStudiesSection = document.getElementById("caseStudiesSection");
 
+  // Toggle tabs
   projectsBtn.addEventListener("click", () => {
 
     projectsSection.classList.remove("hidden");
@@ -756,6 +925,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
     caseStudiesBtn.classList.add("active-toggle");
     projectsBtn.classList.remove("active-toggle");
+
+  });
+
+  // ================= PROJECTS CTA =================
+
+  const toggleProjectsBtn = document.getElementById("toggleProjects");
+  const extraProjects = document.querySelectorAll(".extra-project");
+
+  let projectsExpanded = false;
+
+  toggleProjectsBtn.addEventListener("click", () => {
+
+    projectsExpanded = !projectsExpanded;
+
+    extraProjects.forEach(project => {
+      project.classList.toggle("hidden");
+    });
+
+    toggleProjectsBtn.textContent = projectsExpanded
+      ? "Show Less"
+      : "View All Projects";
+
+  });
+
+  // ================= CASE STUDIES CTA =================
+
+  const toggleCaseStudiesBtn = document.getElementById("toggleCaseStudies");
+  const extraCaseStudies = document.querySelectorAll(".extra-case-study");
+
+  let caseStudiesExpanded = false;
+
+  toggleCaseStudiesBtn.addEventListener("click", () => {
+
+    caseStudiesExpanded = !caseStudiesExpanded;
+
+    extraCaseStudies.forEach(study => {
+      study.classList.toggle("hidden");
+    });
+
+    toggleCaseStudiesBtn.textContent = caseStudiesExpanded
+      ? "Show Less"
+      : "View All Case Studies";
 
   });
 

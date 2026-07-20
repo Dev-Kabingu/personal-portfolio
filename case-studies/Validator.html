@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Validator — UX Case Study</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .hero-overlay {
+      background:
+        linear-gradient(to bottom,
+          rgba(11, 26, 19, 0.92),
+          rgba(11, 26, 19, 0.85),
+          rgba(20, 36, 28, 0.97));
+    }
+
+    .glass-card {
+      backdrop-filter: blur(14px);
+      background: rgba(245, 241, 232, 0.08);
+      border: 1px solid rgba(245, 241, 232, 0.12);
+    }
+
+    .card-hover {
+      transition: all 0.45s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 60px rgba(62, 123, 92, 0.15);
+    }
+
+    .feature-image {
+      transition: transform 0.7s ease;
+    }
+
+    .group:hover .feature-image {
+      transform: scale(1.05);
+    }
+
+    .soft-bg {
+      background:
+        radial-gradient(circle at top left, rgba(62, 123, 92, 0.06), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(27, 58, 43, 0.05), transparent 25%),
+        #FBF9F4;
+    }
+
+    .showcase-image {
+      transition: all 0.6s ease;
+    }
+
+    .showcase-image:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .score-badge {
+      background: conic-gradient(#3E7B5C 0deg 252deg, #E4DFD1 252deg 360deg);
+    }
+
+    .placeholder-frame {
+      background:
+        repeating-linear-gradient(45deg, #EFEBE0, #EFEBE0 12px, #F6F3EA 12px, #F6F3EA 24px);
+      border: 2px dashed #A9C4B4;
+    }
+  </style>
+
+</head>
+
+<body class="bg-white text-gray-900 overflow-x-hidden soft-bg">
+
+  <!-- ================= HERO ================= -->
+
+  <section class="relative min-h-screen overflow-hidden flex items-center bg-[#0B1A13]">
+
+    <!-- Background placeholder -->
+    <div class="absolute inset-0 w-full h-full placeholder-frame opacity-30"></div>
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 hero-overlay"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto px-5 py-32">
+
+      <div class="max-w-4xl">
+
+        <!-- TOP -->
+        <div class="flex flex-col items-start gap-5 mb-10">
+
+          <!-- Back -->
+          <a href="../index.html"
+            class="inline-flex items-center gap-3 text-[#7FB69B] font-semibold hover:gap-5 transition-all duration-300 mono text-sm">
+
+            ← Back to Portfolio
+          </a>
+
+          <!-- Tag -->
+          <div
+            class="inline-flex items-center rounded-full bg-[#3E7B5C]/20 border border-[#7FB69B]/30 px-5 py-2 text-sm font-semibold tracking-wide text-[#B8DCC9] mono">
+
+            Product Design Case Study
+          </div>
+
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-5xl md:text-7xl font-black leading-tight text-[#F5F1E8] mb-8"
+          data-aos="fade-up">
+
+          Validator
+        </h1>
+
+        <!-- Description -->
+        <p class="text-xl md:text-2xl text-[#D8D2C2] leading-relaxed max-w-3xl"
+          data-aos="fade-up"
+          data-aos-delay="200">
+
+          A mobile app and website that help founders check if their idea
+          is worth building — before they spend time and money building it.
+        </p>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-4 mt-12"
+          data-aos="fade-up"
+          data-aos-delay="300">
+
+          <span class="glass-card px-6 py-3 rounded-full text-[#F5F1E8] mono text-sm">
+            UX Research
+          </span>
+
+          <span class="glass-card px-6 py-3 rounded-full text-[#F5F1E8] mono text-sm">
+            Startup Tools
+          </span>
+
+          <span class="glass-card px-6 py-3 rounded-full text-[#F5F1E8] mono text-sm">
+            Mobile + Web
+          </span>
+
+          <span class="glass-card px-6 py-3 rounded-full text-[#F5F1E8] mono text-sm">
+            Product Design
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Hero image placeholder note -->
+  <!-- INSERT IMAGE: hero background — e.g. results.png or dashboard.png, replacing the placeholder-frame div above -->
+
+
+  <!-- ================= OVERVIEW ================= -->
+
+  <section class="py-28">
+
+    <div class="container mx-auto px-5">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <!-- CARD -->
+        <div
+          class="card-hover rounded-[2rem] border border-[#E4DFD1] bg-white/90 backdrop-blur-xl p-8 shadow-xl"
+          data-aos="fade-up">
+
+          <p class="text-[#3E7B5C] uppercase tracking-[0.2em] text-sm mb-3 font-semibold mono">
+            Role
+          </p>
+
+          <h3 class="text-2xl font-bold text-gray-900">
+            UI/UX Designer
+          </h3>
+
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="card-hover rounded-[2rem] border border-[#E4DFD1] bg-white/90 backdrop-blur-xl p-8 shadow-xl"
+          data-aos="fade-up"
+          data-aos-delay="100">
+
+          <p class="text-[#3E7B5C] uppercase tracking-[0.2em] text-sm mb-3 font-semibold mono">
+            Timeline
+          </p>
+
+          <h3 class="text-2xl font-bold text-gray-900">
+            May – June 2026
+          </h3>
+
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="card-hover rounded-[2rem] border border-[#E4DFD1] bg-white/90 backdrop-blur-xl p-8 shadow-xl"
+          data-aos="fade-up"
+          data-aos-delay="200">
+
+          <p class="text-[#3E7B5C] uppercase tracking-[0.2em] text-sm mb-3 font-semibold mono">
+            Tools
+          </p>
+
+          <h3 class="text-2xl font-bold text-gray-900">
+            Figma
+          </h3>
+
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="card-hover rounded-[2rem] border border-[#E4DFD1] bg-white/90 backdrop-blur-xl p-8 shadow-xl"
+          data-aos="fade-up"
+          data-aos-delay="300">
+
+          <p class="text-[#3E7B5C] uppercase tracking-[0.2em] text-sm mb-3 font-semibold mono">
+            Platform
+          </p>
+
+          <h3 class="text-2xl font-bold text-gray-900">
+            Mobile + Web
+          </h3>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= PROBLEM ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-5xl">
+
+        <div
+          class="inline-flex items-center rounded-full bg-[#3E7B5C]/10 px-5 py-2 text-sm font-semibold text-[#2E5C44] mono">
+
+          Problem Statement
+        </div>
+
+        <h2 class="mt-8 text-4xl md:text-6xl font-black leading-tight text-gray-900"
+          data-aos="fade-up">
+
+          Founders launch on instinct,
+          not evidence.
+        </h2>
+
+        <p class="mt-8 text-lg md:text-xl leading-relaxed text-gray-600 max-w-4xl"
+          data-aos="fade-up"
+          data-aos-delay="100">
+
+          Early-stage founders in Nairobi, Lagos, and Kampala had no quick,
+          affordable way to check if their idea already had failed competitors,
+          a gap in the market, or customers complaining about a problem worth
+          solving. The research tools out there were either built for other
+          markets, or too slow and expensive for someone just testing an idea.
+
+          Validator takes a rough idea and gives back a clear, local answer
+          on whether it's worth pursuing — in under 30 seconds.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= RESEARCH / PROCESS ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div class="grid md:grid-cols-2 gap-20 items-center">
+
+        <!-- LEFT -->
+        <div>
+
+          <!-- Tag -->
+          <div
+            class="inline-flex items-center rounded-full bg-[#3E7B5C]/10 px-5 py-2 text-sm font-semibold text-[#2E5C44] mono">
+
+            Design Process
+          </div>
+
+          <!-- Title -->
+          <h2 class="mt-8 text-4xl md:text-5xl font-black leading-tight text-gray-900">
+
+            From a detective theme
+            to a product people trust.
+          </h2>
+
+          <!-- Paragraph -->
+          <p class="mt-8 text-lg leading-relaxed text-gray-600">
+
+            The first version treated idea validation like an investigation —
+            digging up clues the way a detective builds a case file. This gave
+            it a "case file" look: stamp red, dark green, brass, and paper
+            textures. It looked unique, but a case-file feel says "you're under
+            suspicion," not "let's build something great." So the whole look
+            was rebuilt to feel cleaner and calmer, and easier to read quickly
+            on a phone.
+
+          </p>
+
+          <!-- Pain Points -->
+          <div class="space-y-5 mt-10">
+
+            <div
+              class="rounded-3xl border border-[#E4DFD1] bg-white p-6 shadow-lg card-hover">
+
+              The case-file look was slow to read on mobile
+
+            </div>
+
+            <div
+              class="rounded-3xl border border-[#E4DFD1] bg-white p-6 shadow-lg card-hover">
+
+              It felt more like an accusation than encouragement
+
+            </div>
+
+            <div
+              class="rounded-3xl border border-[#E4DFD1] bg-white p-6 shadow-lg card-hover">
+
+              Paper textures made screens heavier, not clearer
+
+            </div>
+
+            <div
+              class="rounded-3xl border border-[#E4DFD1] bg-white p-6 shadow-lg card-hover">
+
+              The name described a theme, not what the app does
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div data-aos="zoom-in">
+
+          <div
+            class="relative overflow-hidden rounded-[2.5rem] border border-[#E4DFD1] bg-white p-4 shadow-2xl">
+
+            <!-- Glow -->
+            <div
+              class="absolute top-[-60px] right-[-60px] w-40 h-40 rounded-full bg-[#3E7B5C]/10 blur-3xl">
+            </div>
+
+            <!-- Image placeholder -->
+            <div class="relative z-10 w-full aspect-[4/5] rounded-[2rem] placeholder-frame flex items-center justify-center text-center p-6">
+              <p class="mono text-sm text-[#5C6B62]">
+                INSERT IMAGE<br>Early dossier concept<br>
+                <span class="text-xs">(validator-dossier-concept.png)</span>
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Caption -->
+          <p class="mt-5 text-sm leading-relaxed text-gray-500 text-center">
+
+            The first design idea — stamp red, dark green, and brass —
+            before the switch to a cleaner look.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= DESIGN STEPS ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-4xl mb-20">
+
+        <div
+          class="inline-flex items-center rounded-full bg-[#3E7B5C]/10 px-5 py-2 text-sm font-semibold text-[#2E5C44] mono">
+
+          Approach
+        </div>
+
+        <h2 class="mt-8 text-4xl md:text-5xl font-black leading-tight text-gray-900">
+
+          From an idea
+          to a working product.
+        </h2>
+
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- CARD -->
+        <div
+          class="card-hover rounded-[2rem] border border-[#E4DFD1] bg-white p-8 shadow-xl"
+          data-aos="fade-up">
+
+          <div class="text-[#3E7B5C] text-6xl font-black mb-8 mono">
+            01
+          </div>
+
+          <h3 class="text-2xl font-bold mb-5">
+            Explore
+          </h3>
+
+          <p class="text-gray-600 leading-relaxed">
+            Built a full 12-screen version with the detective/case-file
+            theme, to test it from start to finish.
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="card-hover rounded-[2rem] border border-[#E4DFD1] bg-white p-8 shadow-xl"
+          data-aos="fade-up"
+          data-aos-delay="100">
+
+          <div class="text-[#3E7B5C] text-6xl font-black mb-8 mono">
+            02
+          </div>
+
+          <h3 class="text-2xl font-bold mb-5">
+            Rebuild
+          </h3>
+
+          <p class="text-gray-600 leading-relaxed">
+            Rebuilt the whole look in forest green, cream, and mint —
+            and renamed the product Validator.
+          </p>
+
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="card-hover rounded-[2rem] border border-[#E4DFD1] bg-white p-8 shadow-xl"
+          data-aos="fade-up"
+          data-aos-delay="200">
+
+          <div class="text-[#3E7B5C] text-6xl font-black mb-8 mono">
+            03
+          </div>
+
+          <h3 class="text-2xl font-bold mb-5">
+            Extend
+          </h3>
+
+          <p class="text-gray-600 leading-relaxed">
+            Used the same design system to build the website — landing
+            page, sign up, idea submission, and results.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= KEY DECISIONS ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-4xl mb-16">
+
+        <div
+          class="inline-flex items-center rounded-full bg-[#3E7B5C]/10 px-5 py-2 text-sm font-semibold text-[#2E5C44] mono">
+
+          Key Decisions
+        </div>
+
+        <h2 class="mt-8 text-4xl md:text-5xl font-black leading-tight text-gray-900">
+
+          Three choices that
+          made a big difference.
+        </h2>
+
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="rounded-[2rem] border border-[#E4DFD1] bg-white p-8 shadow-xl card-hover" data-aos="fade-up">
+          <h3 class="text-xl font-bold mb-4 text-[#1B3A2B]">Pay after, not before</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Founders see free sample results first, then get asked to pay
+            to unlock the full report. This builds trust before asking
+            for money.
+          </p>
+        </div>
+
+        <div class="rounded-[2rem] border border-[#E4DFD1] bg-white p-8 shadow-xl card-hover" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-bold mb-4 text-[#1B3A2B]">SWOT in a simple grid</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Strengths, weaknesses, opportunities, and strategies are shown
+            in four color-coded boxes, so you can take it all in at a glance.
+          </p>
+        </div>
+
+        <div class="rounded-[2rem] border border-[#E4DFD1] bg-white p-8 shadow-xl card-hover" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-xl font-bold mb-4 text-[#1B3A2B]">One score, 0 to 10</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Every report gives one simple number, so a founder checking
+            several ideas can compare them side by side.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MOBILE: ONBOARDING ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-4xl mb-20">
+
+        <div
+          class="inline-flex items-center rounded-full bg-[#3E7B5C]/10 px-5 py-2 text-sm font-semibold text-[#2E5C44] mono">
+
+          Mobile App · Onboarding
+        </div>
+
+        <h2 class="mt-8 text-4xl md:text-5xl font-black leading-tight text-gray-900">
+
+          Splash & Onboarding Screens
+        </h2>
+
+        <p class="mt-8 text-lg leading-relaxed text-gray-600 max-w-3xl">
+
+          A simple splash screen sets the tone, then four onboarding screens
+          explain the basics: save an idea, see what competitors are missing,
+          get a clear score, and start building with confidence.
+
+        </p>
+
+      </div>
+
+      <!-- Image placeholder -->
+      <div
+        class="overflow-hidden rounded-[2.5rem] border border-[#E4DFD1] bg-white shadow-2xl p-4 md:p-8 card-hover"
+        data-aos="fade-up">
+
+        <div class="showcase-image w-full aspect-[16/7] rounded-[1.5rem] placeholder-frame flex items-center justify-center text-center">
+          <p class="mono text-sm text-[#5C6B62]">
+            INSERT IMAGE — Splash & the four onboarding screens<br>
+            <span class="text-xs">(splash.png / onboarding-1-4.png)</span>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MOBILE: DASHBOARD ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-4xl mb-20">
+
+        <div
+          class="inline-flex items-center rounded-full bg-[#3E7B5C]/10 px-5 py-2 text-sm font-semibold text-[#2E5C44] mono">
+
+          Mobile App · Dashboard
+        </div>
+
+        <h2 class="mt-8 text-4xl md:text-5xl font-black leading-tight text-gray-900">
+
+          A home screen
+          built to keep you going.
+        </h2>
+
+        <p class="mt-8 text-lg leading-relaxed text-gray-600 max-w-3xl">
+
+          The home screen leads with one clear button: "Validate a New Idea."
+          Below it, a quick summary and a list of recent checks so a returning
+          founder can see their progress, not an empty screen.
+
+        </p>
+
+      </div>
+
+      <!-- Image placeholder -->
+      <div
+        class="overflow-hidden rounded-[2.5rem] border border-[#E4DFD1] bg-white shadow-2xl p-4 md:p-8 card-hover"
+        data-aos="fade-up">
+
+        <div class="showcase-image w-full aspect-[16/9] rounded-[1.5rem] placeholder-frame flex items-center justify-center text-center">
+          <p class="mono text-sm text-[#5C6B62]">
+            INSERT IMAGE — Dashboard / Home<br>
+            <span class="text-xs">(dashboard.png)</span>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MOBILE: RESULTS ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-4xl mb-20">
+
+        <div
+          class="inline-flex items-center rounded-full bg-[#3E7B5C]/10 px-5 py-2 text-sm font-semibold text-[#2E5C44] mono">
+
+          Mobile App · Results
+        </div>
+
+        <h2 class="mt-8 text-4xl md:text-5xl font-black leading-tight text-gray-900">
+
+          The report that
+          helps you decide.
+        </h2>
+
+        <p class="mt-8 text-lg leading-relaxed text-gray-600 max-w-3xl">
+
+          Built straight from the data behind the scenes: a simple score,
+          a color-coded strengths-and-weaknesses grid, a list of competitors,
+          and a market-gap section that ends with one clear next step.
+
+        </p>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <!-- Score + SWOT -->
+        <div
+          class="overflow-hidden rounded-[2.5rem] border border-[#E4DFD1] bg-white shadow-2xl p-4 md:p-6 card-hover"
+          data-aos="fade-up">
+
+          <div class="showcase-image w-full aspect-[3/4] rounded-[1.5rem] placeholder-frame flex items-center justify-center text-center">
+            <p class="mono text-sm text-[#5C6B62]">
+              INSERT IMAGE — Score & SWOT matrix<br>
+              <span class="text-xs">(results-swot.png)</span>
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Competitors + gaps -->
+        <div
+          class="overflow-hidden rounded-[2.5rem] border border-[#E4DFD1] bg-white shadow-2xl p-4 md:p-6 card-hover"
+          data-aos="fade-up" data-aos-delay="100">
+
+          <div class="showcase-image w-full aspect-[3/4] rounded-[1.5rem] placeholder-frame flex items-center justify-center text-center">
+            <p class="mono text-sm text-[#5C6B62]">
+              INSERT IMAGE — Competitors & market gaps<br>
+              <span class="text-xs">(results-gaps.png)</span>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MOBILE: FEATURE GRID ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-5xl mb-20">
+
+        <div
+          class="inline-flex items-center rounded-full bg-[#3E7B5C]/10 px-5 py-2 text-sm font-semibold text-[#2E5C44] mono">
+
+          Mobile App · Rest of the Flow
+        </div>
+
+        <h2 class="mt-8 text-4xl md:text-5xl font-black leading-tight text-gray-900">
+
+          Saving ideas, checking them,
+          and managing your account.
+        </h2>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        <!-- CARD 1 -->
+        <div
+          class="group card-hover overflow-hidden rounded-[2rem] border border-[#E4DFD1] bg-white shadow-2xl"
+          data-aos="fade-up">
+
+          <div class="overflow-hidden h-[280px] placeholder-frame flex items-center justify-center text-center p-4">
+            <p class="mono text-xs text-[#5C6B62]">INSERT IMAGE<br>idea-bank.png</p>
+          </div>
+
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-5">Idea Bank</h3>
+            <p class="text-gray-600 leading-relaxed">
+              A simple space to save raw ideas as they come to you, with a
+              quick "add" button so nothing gets lost.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div
+          class="group card-hover overflow-hidden rounded-[2rem] border border-[#E4DFD1] bg-white shadow-2xl"
+          data-aos="fade-up" data-aos-delay="100">
+
+          <div class="overflow-hidden h-[280px] placeholder-frame flex items-center justify-center text-center p-4">
+            <p class="mono text-xs text-[#5C6B62]">INSERT IMAGE<br>validation-wizard.png</p>
+          </div>
+
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-5">Validation Wizard</h3>
+            <p class="text-gray-600 leading-relaxed">
+              A simple 3-step form with a progress bar, so submitting an
+              idea never feels like too much work.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+        <div
+          class="group card-hover overflow-hidden rounded-[2rem] border border-[#E4DFD1] bg-white shadow-2xl"
+          data-aos="fade-up" data-aos-delay="200">
+
+          <div class="overflow-hidden h-[280px] placeholder-frame flex items-center justify-center text-center p-4">
+            <p class="mono text-xs text-[#5C6B62]">INSERT IMAGE<br>history.png</p>
+          </div>
+
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-5">History</h3>
+            <p class="text-gray-600 leading-relaxed">
+              A list of past checks you can filter by score, region, or
+              industry, and reopen instantly anytime.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- CARD 4 -->
+        <div
+          class="group card-hover overflow-hidden rounded-[2rem] border border-[#E4DFD1] bg-white shadow-2xl"
+          data-aos="fade-up" data-aos-delay="300">
+
+          <div class="overflow-hidden h-[280px] placeholder-frame flex items-center justify-center text-center p-4">
+            <p class="mono text-xs text-[#5C6B62]">INSERT IMAGE<br>settings.png</p>
+          </div>
+
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-5">Settings</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Account details, privacy options, and support, all kept
+              simple and easy to find.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= WEBSITE INTRO ================= -->
+
+  <section class="pb-20">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-4xl">
+
+        <div
+          class="inline-flex items-center rounded-full bg-[#1B3A2B]/10 px-5 py-2 text-sm font-semibold text-[#1B3A2B] mono">
+
+          Website
+        </div>
+
+        <h2 class="mt-8 text-4xl md:text-6xl font-black leading-tight text-gray-900"
+          data-aos="fade-up">
+
+          Now let's look
+          at the website.
+        </h2>
+
+        <p class="mt-8 text-lg md:text-xl leading-relaxed text-gray-600 max-w-4xl"
+          data-aos="fade-up" data-aos-delay="100">
+
+          Validator also works as a website — the main way most founders
+          first find it, with the app as a companion. It uses the same
+          colors, the same design choices, just built for a bigger screen.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= WEBSITE: LANDING PAGE ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-4xl mb-20">
+
+        <div
+          class="inline-flex items-center rounded-full bg-[#3E7B5C]/10 px-5 py-2 text-sm font-semibold text-[#2E5C44] mono">
+
+          Website · Landing Page
+        </div>
+
+        <h2 class="mt-8 text-4xl md:text-5xl font-black leading-tight text-gray-900">
+
+          Before and after,
+          side by side.
+        </h2>
+
+        <p class="mt-8 text-lg leading-relaxed text-gray-600 max-w-3xl">
+
+          A full landing page with a "before and after" section that shows
+          the difference between guessing and knowing — so people understand
+          the value before they even sign up.
+
+        </p>
+
+      </div>
+
+      <div
+        class="overflow-hidden rounded-[2.5rem] border border-[#E4DFD1] bg-white shadow-2xl p-4 md:p-8 card-hover"
+        data-aos="fade-up">
+
+        <div class="showcase-image w-full aspect-[16/9] rounded-[1.5rem] placeholder-frame flex items-center justify-center text-center">
+          <p class="mono text-sm text-[#5C6B62]">
+            INSERT IMAGE — Landing page (hero + Before & After section)<br>
+            <span class="text-xs">(web-landing-page.png)</span>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= WEBSITE: AUTH + SUBMISSION ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <div
+          class="overflow-hidden rounded-[2.5rem] border border-[#E4DFD1] bg-white shadow-2xl p-4 md:p-6 card-hover"
+          data-aos="fade-up">
+
+          <div class="showcase-image w-full aspect-[4/5] rounded-[1.5rem] placeholder-frame flex items-center justify-center text-center">
+            <p class="mono text-sm text-[#5C6B62]">
+              INSERT IMAGE — Sign up & sign in<br>
+              <span class="text-xs">(web-signup-signin.png)</span>
+            </p>
+          </div>
+
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-3">Sign Up & Sign In</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              A pop-up window for signing up or logging in, so people
+              don't have to leave the page they're on.
+            </p>
+          </div>
+
+        </div>
+
+        <div
+          class="overflow-hidden rounded-[2.5rem] border border-[#E4DFD1] bg-white shadow-2xl p-4 md:p-6 card-hover"
+          data-aos="fade-up" data-aos-delay="100">
+
+          <div class="showcase-image w-full aspect-[4/5] rounded-[1.5rem] placeholder-frame flex items-center justify-center text-center">
+            <p class="mono text-sm text-[#5C6B62]">
+              INSERT IMAGE — Idea submission form<br>
+              <span class="text-xs">(web-submission-form.png)</span>
+            </p>
+          </div>
+
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-3">Idea Submission</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              Follows the same steps as the app's form, using the bigger
+              screen to get it done in fewer steps.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= WEBSITE: RESULTS & PAYWALL ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-4xl mb-20">
+
+        <div
+          class="inline-flex items-center rounded-full bg-[#3E7B5C]/10 px-5 py-2 text-sm font-semibold text-[#2E5C44] mono">
+
+          Website · Results
+        </div>
+
+        <h2 class="mt-8 text-4xl md:text-5xl font-black leading-tight text-gray-900">
+
+          A report you can
+          come back to.
+        </h2>
+
+        <p class="mt-8 text-lg leading-relaxed text-gray-600 max-w-3xl">
+
+          A longer report layout with a sidebar menu that stays in view as
+          you scroll — good for founders who want to come back and reread
+          it. Same score, strengths-and-weaknesses grid, and market gaps as
+          the app, just laid out for a bigger screen.
+
+        </p>
+
+      </div>
+
+      <div
+        class="overflow-hidden rounded-[2.5rem] border border-[#E4DFD1] bg-white shadow-2xl p-4 md:p-8 card-hover"
+        data-aos="fade-up">
+
+        <div class="showcase-image w-full aspect-[16/9] rounded-[1.5rem] placeholder-frame flex items-center justify-center text-center">
+          <p class="mono text-sm text-[#5C6B62]">
+            INSERT IMAGE — Results report (web)<br>
+            <span class="text-xs">(web-results-report.png)</span>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= REFLECTION ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div class="max-w-4xl">
+
+        <div
+          class="inline-flex items-center rounded-full bg-[#3E7B5C]/10 px-5 py-2 text-sm font-semibold text-[#2E5C44] mono">
+
+          Reflection
+        </div>
+
+        <h2 class="mt-8 text-4xl md:text-5xl font-black leading-tight text-gray-900">
+
+          What I learned
+          building Validator.
+        </h2>
+
+        <p class="mt-8 text-lg leading-relaxed text-gray-600">
+
+          The final design kept the ambition of the first idea — a tool
+          that feels serious and trustworthy — without the extra weight
+          that made it slow to use on a phone. The biggest lesson: a
+          design can look unique and still be hard to use. Noticing that,
+          and being willing to rebuild instead of defending the first idea,
+          is part of good design work.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CTA ================= -->
+
+  <section class="pb-32">
+
+    <div class="container mx-auto px-5">
+
+      <div
+        class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-[#1B3A2B] to-[#3E7B5C] p-14 md:p-20 text-center shadow-2xl">
+
+        <!-- Glow -->
+        <div
+          class="absolute top-[-100px] right-[-100px] w-[300px] h-[300px] rounded-full bg-white/10 blur-3xl">
+        </div>
+
+        <div class="relative z-10">
+
+          <h2 class="text-4xl md:text-5xl font-black text-[#F5F1E8] mb-8">
+
+            Want to see more projects?
+          </h2>
+
+          <p class="text-[#D8E8DE] text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+
+            Take a look at more of my design work.
+          </p>
+
+          <a href="../index.html#portfolio"
+            class="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 font-semibold text-[#1B3A2B] transition duration-300 hover:scale-105 hover:gap-5">
+
+            Back to Portfolio →
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+</body>
+
+</html>
